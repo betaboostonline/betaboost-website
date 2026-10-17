@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BetaBoost</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="BetaBoost: gratis online bijles wiskunde en natuurkunde in groepjes van maximaal 10, voor leerlingen in de onderbouw van het voortgezet onderwijs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<div class="draft-bar" role="note">
+  <div class="wrap">Eerste versie van de BetaBoost-website.</div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#home" aria-label="BetaBoost home">
+      <svg class="logo-mark" viewBox="0 0 512 512" aria-hidden="true"><circle cx="256" cy="256" r="244" fill="#0F918B" stroke="#D3EEEC" stroke-width="16"/><path fill="#FFFFFF" transform="translate(143.07 363.30) scale(0.19651 -0.19651)" d="M-13 -418H204L301 174C333 40 436 -19 585 -19C851 -19 1061 167 1104 427C1140 642 1027 751 853 798C1018 844 1129 938 1157 1108C1195 1346 1025 1510 758 1510C480 1510 277 1339 233 1070ZM570 178C395 178 319 285 342 424L452 1087C475 1223 583 1310 736 1310C882 1310 962 1228 939 1094C915 956 806 872 660 872H584L555 696H685C838 696 918 597 891 437C864 277 740 178 570 178Z"/></svg>
+      <span>BetaBoost</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Hoofdmenu">
+      <a href="#home">Thuis</a>
+      <a href="#how">Zo werkt het</a>
+      <a href="#sessions">Lessen</a>
+      <a href="#resources">Oefenen</a>
+      <a href="#explore">Ontdek bèta</a>
+      <a href="#schools">Voor scholen</a>
+      <a href="#about">Over ons</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-lift nav-cta" href="#register">Gratis aanmelden</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HOME ============ -->
+<section data-view="home">
+  <div class="hero graph">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Gratis online bijles · Wiskunde en natuurkunde</p>
+        <h1>Drempels weg.<br><mark>Zelfvertrouwen omhoog.</mark></h1>
+        <p class="lede">BetaBoost geeft leerlingen in klas 1 en 2 gratis online bijles in kleine groepjes. Zo hangt hulp bij wiskunde en natuurkunde niet af van wat een gezin kan betalen.</p>
+        <div class="actions">
+          <a class="btn btn-lift" href="#register">Meld je gratis aan</a>
+          <a class="btn btn-ghost" href="#sessions">Bekijk de lessen</a>
+        </div>
+      </div>
+      <ol class="notebook" aria-label="Hoe een leerling groeit bij BetaBoost">
+        <li><span class="nb-q">“Ik snap dit niet.”</span></li>
+        <li><span class="nb-q">“Ik kán dit snappen.”</span></li>
+        <li><span class="nb-q"><mark>“Wat kan ik hier nog meer mee?”</mark></span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="facts">
+    <div class="fact"><span class="fact-n">€0</span><span>Bijles is helemaal gratis</span></div>
+    <div class="fact"><span class="fact-n">10</span><span>Leerlingen per groep, maximaal</span></div>
+    <div class="fact"><span class="fact-n">100%</span><span>online</span></div>
+    <div class="fact"><span class="fact-n">2</span><span>Vakken: wiskunde en natuurkunde</span></div>
+  </div></div>
+
+
+  <div class="wrap section">
+    <div class="section-head">
+      <p class="eyebrow">Wat kun je hier doen?</p>
+      <h2>Kies wat bij je past</h2>
+    </div>
+    <div class="grid-3">
+      <a class="tile" href="#register"><h3>Leerlingen en ouders</h3><p>Gratis uitleglessen in groepjes van maximaal 10. Wie meedoet, kan ook huiswerkhulp krijgen.</p><span class="tile-link">Aanmelden</span></a>
+      <a class="tile" href="#resources"><h3>Zelf oefenen</h3><p>Gratis uitleg en oefeningen in je eigen tempo, zonder account.</p><span class="tile-link">Naar oefenmateriaal</span></a>
+      <a class="tile" href="#schools"><h3>Docenten en scholen</h3><p>Verwijs leerlingen door die extra hulp goed kunnen gebruiken.</p><span class="tile-link">Voor scholen</span></a>
+    </div>
+  </div>
+
+  <div class="band"><div class="wrap section narrow">
+    <p class="eyebrow">Waarom BetaBoost</p>
+    <h2>Hulp bij bètavakken mag geen geld kosten</h2>
+    <p>Gezinnen met meer geld huren bijles in zodra hun kind vastloopt. Voor veel andere gezinnen kan dat niet. Na genoeg lastige lessen denken leerlingen dan dat wiskunde en natuurkunde “niks voor hen” zijn.</p>
+    <p>BetaBoost helpt vroeg, in klas 1 en 2, met gratis lessen die eerst begrip opbouwen en daarna zelfvertrouwen.</p>
+    <div class="actions"><a class="btn btn-lift" href="#how">Zo werkt het</a><a class="btn btn-ghost" href="#about">Over ons</a></div>
+  </div></div>
+</section>
+
+<!-- ============ ZO WERKT HET ============ -->
+<section data-view="how" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <p class="eyebrow">Zo werkt het</p>
+    <h1>Van aanmelding tot eerste les</h1>
+    <p class="lede">Gratis, 100% online, voor klas 1 en 2, in groepjes van maximaal 10.</p>
+  </div></div>
+
+  <div class="wrap section">
+    <h2>In vijf stappen naar je eerste les</h2>
+    <ol class="steps">
+      <li><h3>Aanmelden</h3><p>Vul het formulier in en kies je lessen.</p></li>
+      <li><h3>Toestemming</h3><p>Je ouder of verzorger geeft toestemming in hetzelfde formulier.</p></li>
+      <li><h3>Controle</h3><p>We bekijken je aanmelding en mailen je ouder of je bent geaccepteerd.</p></li>
+      <li><h3>Startvragenlijst</h3><p>Vijf minuten over hoe je nu over wiskunde en natuurkunde denkt.</p></li>
+      <li><h3>Eerste les</h3><p>Je ouder krijgt de Zoom-link en je doet mee.</p></li>
+    </ol>
+    <div class="actions"><a class="btn btn-lift" href="#register">Meld je gratis aan</a></div>
+  </div>
+
+  <div class="band"><div class="wrap section">
+    <h2>Twee soorten lessen</h2>
+    <div class="grid-2">
+      <div class="tile static">
+        <p class="eyebrow">De basis</p>
+        <h3>Uitlegles</h3>
+        <p>Een docent legt één onderwerp uit, doet een voorbeeld voor en daarna oefen je zelf. Elke les heeft dezelfde opbouw:</p>
+        <ol class="flow" aria-label="Opbouw van een uitlegles">
+          <li>Uitleg</li><li>Voorbeeld</li><li>Zelf oefenen</li><li>Vragen</li>
+        </ol>
+      </div>
+      <div class="tile static">
+        <p class="eyebrow">Extra</p>
+        <h3>Huiswerkhulp</h3>
+        <p>Alleen voor leerlingen die ook uitleglessen volgen. Je stuurt je vraag van tevoren in en we helpen je begrijpen hoe je de opgave aanpakt.</p>
+        <p class="fine">We maken je huiswerk niet voor je.</p>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="wrap section">
+    <h2>Goed om te weten</h2>
+    <ul class="checks">
+      <li><b>Helemaal gratis.</b> Geen kosten, geen proefperiode.</li>
+      <li><b>Wiskunde en natuurkunde.</b> Andere bètavakken volgen misschien later.</li>
+      <li><b>Is een les vol?</b> Dan kom je op de wachtlijst en hoor je het als er een plek vrijkomt.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ LESSEN ============ -->
+<section data-view="sessions" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <p class="eyebrow">Vakken en lessen</p>
+    <h1>Komende lessen</h1>
+    <p class="lede">Kies een les en meld je aan. Elke groep heeft maximaal 10 leerlingen. Het aantal vrije plekken wordt bijgewerkt zodra iemand zich aanmeldt.</p>
+  </div></div>
+  <div class="wrap section">
+    <div class="toolbar">
+      <div class="chips" role="group" aria-label="Filter op vak">
+        <button class="chip is-on" data-filter="all">Alle</button>
+        <button class="chip" data-filter="Wiskunde">Wiskunde</button>
+        <button class="chip" data-filter="Natuurkunde">Natuurkunde</button>
+        <button class="chip" data-filter="Huiswerkhulp">Huiswerkhulp</button>
+      </div>
+      <p class="hint" id="sessions-source">Lessen laden…</p>
+    </div>
+    <div class="session-list" id="session-list"></div>
+    <div class="callout">
+      <p><b>Ook huiswerkhulp?</b> Doe je mee aan de uitleglessen, dan kun je bij het aanmelden ook huiswerkhulp-lessen kiezen en je huiswerkvraag van tevoren insturen.</p>
+      <a class="btn btn-ghost" href="#register">Naar aanmelden</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AANMELDEN ============ -->
+<section data-view="register" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <p class="eyebrow">Gratis aanmelden</p>
+    <h1>Aanmelden in ongeveer vijf minuten</h1>
+    <p class="lede">BetaBoost is voor leerlingen in klas 1 en 2. Na je aanmelding controleren we je gegevens. Je ouder of verzorger krijgt een mail zodra je bent geaccepteerd.</p>
+  </div></div>
+  <div class="wrap section form-wrap">
+    <form id="register-form" class="form" novalidate>
+      <p class="fine">Velden met een <span class="star" aria-hidden="true">*</span> zijn verplicht.</p>
+      <fieldset>
+        <legend>Over de leerling</legend>
+        <div class="row">
+          <label><span>Voornaam <span class="star" aria-hidden="true">*</span></span><input id="r-name" name="voornaam" required autocomplete="given-name" maxlength="60"></label>
+          <label><span>Achternaam <span class="star" aria-hidden="true">*</span></span><input id="r-lastname" name="achternaam" required autocomplete="family-name" maxlength="80"></label>
+        </div>
+        <div class="row">
+          <label><span>Leeftijd <span class="star" aria-hidden="true">*</span></span><input id="r-age" name="leeftijd" type="number" min="10" max="15" required inputmode="numeric"></label>
+          <label><span>Klas <span class="star" aria-hidden="true">*</span></span>
+            <select id="r-year" name="klas" required>
+              <option value="">Kies…</option>
+              <option value="Klas 1">Klas 1 (brugklas)</option><option value="Klas 2">Klas 2</option>
+            </select>
+          </label>
+        </div>
+        <label><span>School <span class="star" aria-hidden="true">*</span></span><input id="r-school" name="school" required autocomplete="organization" maxlength="120"></label>
+        <div class="verify">
+          <label><span>Schoolmail van de leerling <span class="star" aria-hidden="true">*</span></span>
+            <input id="r-schoolmail" name="schoolmail" type="email" required maxlength="120" autocomplete="off" placeholder="bijvoorbeeld 123456@leerling.schoolnaam.nl">
+          </label>
+          <button class="btn btn-small" type="button" id="r-sendcode">Stuur code</button>
+        </div>
+        <p class="fine" id="r-mailstatus">We sturen een code naar je schoolmail om te controleren dat het adres echt is. Een privé-adres zoals Gmail of Hotmail kan niet.</p>
+        <label id="r-codewrap" hidden><span>Code uit de mail <span class="star" aria-hidden="true">*</span></span><input id="r-code" name="code" inputmode="numeric" maxlength="6" autocomplete="one-time-code" pattern="[0-9]{6}"></label>
+        <p class="fine" id="r-nocodewrap" hidden>Geen code ontvangen? Sommige scholen houden mail van buiten tegen. Kijk eerst bij ongewenste mail. <button type="button" class="link-btn" id="r-nocode">Aanmelden zonder code</button></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Waar heb je hulp bij nodig?</legend>
+        <div class="checkset" role="group" aria-label="Vakken, verplicht">
+          <span class="set-label">Vakken <span class="star" aria-hidden="true">*</span></span>
+          <label class="check"><input type="checkbox" id="r-sub-m" name="vakken" value="Wiskunde"> <span>Wiskunde</span></label>
+          <label class="check"><input type="checkbox" id="r-sub-p" name="vakken" value="Natuurkunde"> <span>Natuurkunde</span></label>
+        </div>
+        <label>Onderwerpen die je lastig vindt<textarea id="r-topics" name="onderwerpen" rows="3" maxlength="600" placeholder="Bijvoorbeeld: breuken, vergelijkingen met haakjes, dichtheid"></textarea></label>
+        <div class="checkset" role="radiogroup" aria-label="Bijles buiten school, verplicht">
+          <span class="set-label">Heb je nu bijles buiten school? <span class="star" aria-hidden="true">*</span></span>
+          <label class="check"><input type="radio" id="r-tut-no" name="bijles" value="Nee" required> <span>Nee</span></label>
+          <label class="check"><input type="radio" id="r-tut-some" name="bijles" value="Soms"> <span>Soms</span></label>
+          <label class="check"><input type="radio" id="r-tut-yes" name="bijles" value="Ja, regelmatig"> <span>Ja, regelmatig</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Kies je lessen <span class="star" aria-hidden="true">*</span></legend>
+        <p class="fine">Kies minstens één uitlegles. Je plek wordt vastgehouden tot we je aanmelding hebben beoordeeld. Is een les vol, dan kom je op de wachtlijst.</p>
+        <div class="pick-list" id="r-lessons" role="group" aria-label="Uitleglessen"></div>
+        <h3 class="pick-head">Huiswerkhulp (niet verplicht)</h3>
+        <p class="fine" id="r-hw-hint">Huiswerkhulp is voor leerlingen die ook aan de uitleglessen meedoen. Kies eerst een uitlegles.</p>
+        <div class="pick-list" id="r-hwlessons" role="group" aria-label="Huiswerkhulp-lessen"></div>
+      </fieldset>
+
+      <fieldset id="r-hw" hidden>
+        <legend>Je huiswerkvraag</legend>
+        <p class="fine">We lezen de vragen van tevoren en bundelen vergelijkbare vragen. Zet geen namen of andere persoonlijke gegevens in je vraag.</p>
+        <div class="row">
+          <label><span>Vak <span class="star" aria-hidden="true">*</span></span>
+            <select id="h-subject" name="hwVak" data-hw-required>
+              <option value="">Kies…</option><option>Wiskunde</option><option>Natuurkunde</option>
+            </select>
+          </label>
+          <label>Onderwerp<input id="h-topic" name="hwOnderwerp" maxlength="120" placeholder="Bijvoorbeeld: procenten"></label>
+        </div>
+        <label><span>Je vraag of opgave <span class="star" aria-hidden="true">*</span></span><textarea id="h-question" name="hwVraag" rows="4" maxlength="1500" data-hw-required placeholder="Neem de opgave over, of beschrijf waar je vastloopt"></textarea></label>
+        <label><span>Wat heb je al geprobeerd? <span class="star" aria-hidden="true">*</span></span><textarea id="h-tried" name="hwGeprobeerd" rows="3" maxlength="1500" data-hw-required placeholder="Schrijf je stappen op, ook als je denkt dat ze fout zijn"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Ouder of verzorger</legend>
+        <p class="fine">Leerlingen in klas 1 en 2 zijn jonger dan 16. Daarom heeft BetaBoost volgens de privacywet (AVG) toestemming van een ouder of verzorger nodig. Berichten over de aanmelding en de Zoom-links sturen we naar dit e-mailadres.</p>
+        <div class="row">
+          <label><span>Naam <span class="star" aria-hidden="true">*</span></span><input id="r-pname" name="ouderNaam" required autocomplete="name" maxlength="100"></label>
+          <label><span>E-mailadres <span class="star" aria-hidden="true">*</span></span><input id="r-pemail" name="ouderEmail" type="email" required autocomplete="email" maxlength="120"></label>
+        </div>
+        <label>Telefoonnummer<input id="r-pphone" name="ouderTelefoon" type="tel" autocomplete="tel" maxlength="20"></label>
+        <div class="consents">
+          <label class="check"><input type="checkbox" id="r-c-join" name="toestemmingDeelname" required> <span>Ik ben ouder of verzorger van deze leerling en geef toestemming dat mijn kind meedoet aan de online groepslessen van BetaBoost via Zoom. <span class="star" aria-hidden="true">*</span></span></label>
+          <label class="check"><input type="checkbox" id="r-c-data" name="toestemmingGegevens" required> <span>Ik geef toestemming dat BetaBoost de gegevens uit dit formulier gebruikt zoals beschreven in de <a href="#policies">privacyverklaring</a>. <span class="star" aria-hidden="true">*</span></span></label>
+          <label class="check"><input type="checkbox" id="r-c-terms" name="toestemmingVoorwaarden" required> <span>Ik ga akkoord met de <a href="#voorwaarden">algemene voorwaarden</a> en verklaar dat de gegevens kloppen. <span class="star" aria-hidden="true">*</span></span></label>
+          <label class="check"><input type="checkbox" id="r-c-rules" name="lesregelsBesproken" required> <span>Ik heb de <a href="#policies">lesregels</a> met mijn kind besproken. <span class="star" aria-hidden="true">*</span></span></label>
+          <label class="check"><input type="checkbox" id="r-c-research" name="toestemmingOnderzoek"> <span>Mijn kind mag korte vragenlijsten invullen over zelfvertrouwen en interesse in bètavakken. De antwoorden gebruiken we alleen anoniem om BetaBoost te verbeteren en te laten zien wat het oplevert.</span></label>
+        </div>
+        <p class="fine">U kunt uw toestemming altijd intrekken door te mailen naar <code>hulp.betaboost@gmail.com</code>. We verwijderen dan de gegevens van uw kind.</p>
+      </fieldset>
+
+      <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input id="r-website" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <p class="form-error" id="register-error" hidden></p>
+      <button class="btn btn-lift" type="submit" id="register-submit">Aanmelding versturen</button>
+    </form>
+    <div class="form-done" id="register-done" hidden tabindex="-1">
+      <h2>Aanmelding ontvangen</h2>
+      <p>We controleren je aanmelding. Je ouder of verzorger krijgt binnen een paar dagen een mail of je bent geaccepteerd. Tot die tijd houden we je plek vast.</p>
+      <div id="register-summary"></div>
+      <a class="btn btn-ghost" href="#sessions">Terug naar de lessen</a>
+    </div>
+    <aside class="side-note">
+      <h3>Wat we met je gegevens doen</h3>
+      <p>Je aanmelding gaat alleen naar de oprichters van BetaBoost. Op de website verschijnt alleen hoeveel plekken er nog vrij zijn, nooit wie zich heeft aangemeld.</p>
+      <p>We vragen geen adres of cijfers van de leerling. Alles staat in de <a href="#policies">privacyverklaring</a>.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ OEFENEN ============ -->
+<section data-view="resources" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <p class="eyebrow">Oefenmateriaal</p>
+    <h1>Gratis uitleg en oefeningen</h1>
+    <p class="lede">Voor iedereen, zonder account. Kies een onderwerp en open de uitleg, de oefeningen of de antwoorden.</p>
+  </div></div>
+  <div class="wrap section">
+    <div class="toolbar">
+      <div class="chips" role="group" aria-label="Filter modules op vak">
+        <button class="chip is-on" data-mod="all">Alle</button>
+        <button class="chip" data-mod="Wiskunde">Wiskunde</button>
+        <button class="chip" data-mod="Natuurkunde">Natuurkunde</button>
+      </div>
+      <p class="hint" id="modules-source"></p>
+    </div>
+    <div class="module-grid" id="module-grid"></div>
+  </div>
+
+</section>
+
+<!-- ============ ONTDEK BÈTA ============ -->
+<section data-view="explore" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <p class="eyebrow">Ontdek bèta</p>
+    <h1>Wat je in de les leert, brengt je ergens</h1>
+    <p class="lede">De onderwerpen die je bij ons oefent, gebruiken ingenieurs, programmeurs en onderzoekers elke dag.</p>
+  </div></div>
+  <div class="wrap section">
+    <div class="links-grid">
+      <a class="link-card" href="#ontdek-algebra"><p class="from">Algebra</p><p class="to">Programmeren en kunstmatige intelligentie</p><p class="desc">Met variabelen en vergelijkingen vertel je een computer wat hij moet doen, en leren AI-modellen van data.</p><span class="tile-link">Lees de uitleg</span></a>
+      <a class="link-card" href="#ontdek-krachten"><p class="from">Krachten</p><p class="to">Lucht- en ruimtevaart en bouwkunde</p><p class="desc">Bruggen, vliegtuigen en stadiondaken blijven staan of vliegen omdat iemand de krachten erop in balans bracht.</p><span class="tile-link">Lees de uitleg</span></a>
+      <a class="link-card" href="#ontdek-elektriciteit"><p class="from">Elektriciteit</p><p class="to">Duurzame energie</p><p class="desc">Zonnepanelen en windmolens leveren stroom aan het net volgens dezelfde regels voor schakelingen die je in klas 2 leert.</p><span class="tile-link">Lees de uitleg</span></a>
+    </div>
+  </div>
+  <div class="band"><div class="wrap section">
+    <p class="eyebrow">Verhalen en artikelen</p>
+    <h2>Lees verder</h2>
+    <div class="article-grid" id="article-grid"></div>
+  </div></div>
+  <div class="wrap section">
+    <p class="eyebrow">Routes</p>
+    <h2>Zo kom je in het Nederlandse onderwijs bij een bètaopleiding</h2>
+    <div class="grid-3">
+      <div class="tile static"><h3>vmbo → mbo</h3><p>Technische en laboratoriumrichtingen leiden tot werk als technicus, installateur, laborant of ICT’er, of door naar het hbo.</p></div>
+      <div class="tile static"><h3>havo → hbo</h3><p>Met het profiel N&amp;T of N&amp;G kun je naar hbo-opleidingen in techniek, ICT, toegepaste natuurwetenschappen en zorgtechnologie.</p></div>
+      <div class="tile static"><h3>vwo → universiteit</h3><p>N&amp;T of N&amp;G geeft toegang tot universitaire studies in natuurwetenschappen, techniek, geneeskunde en informatica.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTIKEL ============ -->
+<section data-view="ontdek-algebra" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <a class="back-link" href="#explore">← Terug naar Ontdek bèta</a>
+    <p class="eyebrow">Algebra → Programmeren en kunstmatige intelligentie</p>
+    <h1>Algebra: de taal achter apps, games en AI</h1>
+    <p class="lede">Rekenen met letters lijkt soms een trucje voor de toets. Maar je navigatie-app, je favoriete game en elk AI-model draaien op precies dit idee.</p>
+  </div></div>
+
+  <div class="wrap section prose">
+    <h2>Een idee van meer dan duizend jaar oud</h2>
+    <p>Het woord algebra komt uit het Arabisch: <i>al-jabr</i>. Het staat in de titel van een boek van de wiskundige Al-Khwarizmi, die rond het jaar 820 in Bagdad werkte. Hij beschreef stap voor stap hoe je een onbekend getal kunt vinden. Van zijn naam komt ook het woord <b>algoritme</b>: een lijstje stappen dat een computer uitvoert.</p>
+    <p>Het slimme van algebra is dat je met een letter, zoals <i>x</i>, één regel opschrijft die voor heel veel situaties werkt. Zo'n regel heet een formule.</p>
+
+    <h2>Je navigatie-app rekent de hele tijd</h2>
+    <div class="example">
+      <p class="formula">tijd = afstand ÷ snelheid</p>
+      <p>Moet je nog 30 kilometer over een weg waar je 60 km per uur rijdt, dan duurt dat 30 ÷ 60 = een half uur. Een navigatie-app doet dit voor elk stukje weg, met de snelheid van het verkeer van dit moment. Daarna telt hij alles op. Komt er een file, dan verandert de snelheid en rekent de app een nieuwe aankomsttijd uit.</p>
+    </div>
+
+    <h2>Games: formules die zestig keer per seconde draaien</h2>
+    <p>In een game heeft elk poppetje en elke bal een positie en een snelheid. Die staan in variabelen, letters met een getal erin. Bij elk beeldje dat je scherm laat zien, vaak zestig keer per seconde, voert de computer formules uit zoals:</p>
+    <div class="example">
+      <p class="formula">positie = positie + snelheid × tijd</p>
+      <p>Zo schuift alles een klein stukje op. Springt je personage, dan trekt een andere formule elke keer een beetje van de snelheid omhoog af. Daardoor komt hij in een mooie boog weer naar beneden. Dat is de zwaartekracht, in algebra nagebouwd.</p>
+    </div>
+
+    <h2>Geheime berichten</h2>
+    <p>Als je een bericht stuurt via WhatsApp, wordt het versleuteld. Onderweg ziet het eruit als onzin, en alleen de telefoon van de ontvanger kan het weer leesbaar maken. Dat werkt met formules en heel grote getallen. Ze zijn zo gekozen dat terugrekenen zonder de juiste sleutel zelfs voor de snelste computers te lang duurt.</p>
+
+    <h2>Kunstmatige intelligentie: een formule die leert</h2>
+    <p>Een AI-model is eigenlijk een gigantische formule. In plaats van één <i>x</i> zitten er miljoenen of zelfs miljarden getallen in. In het begin kloppen die getallen nog niet, en geeft het model onzin. Tijdens het trainen krijgt het heel veel voorbeelden te zien. Na elk voorbeeld schuift de computer alle getallen een klein beetje bij, zodat het antwoord iets beter wordt.</p>
+    <p>Zo leert een model welke video's jij waarschijnlijk leuk vindt, hoe een kat eruitziet of welk woord er na een zin komt. De rekenstappen zijn dezelfde als in de klas: invullen, uitrekenen en kijken hoe ver je ernaast zit.</p>
+
+    <h2>Wat kun je ermee worden?</h2>
+    <ul class="checks">
+      <li><b>Programmeur of game-ontwikkelaar</b>, via een mbo- of hbo-opleiding ICT.</li>
+      <li><b>Data-analist</b>, die patronen zoekt in grote hoeveelheden gegevens.</li>
+      <li><b>Cybersecurity-specialist</b>, die systemen en berichten beveiligt.</li>
+      <li><b>AI-onderzoeker</b>, bijvoorbeeld na een studie informatica of kunstmatige intelligentie.</li>
+    </ul>
+    <p><a class="back-link" href="#explore">← Terug naar Ontdek bèta</a></p>
+  </div>
+</section>
+
+<section data-view="ontdek-krachten" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <a class="back-link" href="#explore">← Terug naar Ontdek bèta</a>
+    <p class="eyebrow">Krachten → Lucht- en ruimtevaart en bouwkunde</p>
+    <h1>Krachten: hoe wolkenkrabbers blijven staan en raketten opstijgen</h1>
+    <p class="lede">Alles om je heen wordt geduwd of getrokken. Wie begrijpt hoe dat werkt, kan bruggen, torens, vliegtuigen en raketten ontwerpen.</p>
+  </div></div>
+
+  <div class="wrap section prose">
+    <h2>Wat is een kracht?</h2>
+    <p>Een kracht is een duw of een trek. Je meet krachten in <b>newton</b> (N), genoemd naar Isaac Newton, de Engelse wetenschapper die de regels voor beweging opschreef. Op aarde trekt de zwaartekracht aan alles. Aan elke kilogram trekt hij met ongeveer 10 newton. Op de maan is dat maar ongeveer een zesde daarvan. Daarom konden astronauten daar met hun zware pakken nog hoog springen.</p>
+
+    <h2>Evenwicht: waarom dingen blijven staan</h2>
+    <p>Een boek op tafel valt niet, omdat de tafel net zo hard omhoog duwt als de zwaartekracht omlaag trekt. De krachten heffen elkaar op. Dat heet <b>evenwicht</b>. Bij alles wat stil staat, van een stoel tot de hoogste toren ter wereld, moeten de krachten in evenwicht zijn. Een bouwkundig ingenieur rekent uit of dat zo blijft, ook als er duizenden mensen, sneeuw of storm bij komen.</p>
+
+    <h2>Wolkenkrabbers tegen de wind</h2>
+    <p>Bij een heel hoge toren is niet het gewicht het grootste probleem, maar de wind. Hoe hoger je komt, hoe harder het waait. De wind duwt tegen de zijkant, en achter het gebouw ontstaan draaikolken die het heen en weer kunnen laten wiegen. Daarom testen ingenieurs schaalmodellen in windtunnels. Ze geven torens een vorm die steeds verandert, zodat de wind geen vast ritme krijgt. Sommige wolkenkrabbers hebben bovenin zelfs een enorme hangende stalen bal die tegen het wiegen in beweegt.</p>
+
+    <h2>Bruggen: trekken en duwen</h2>
+    <p>Bij de Erasmusbrug in Rotterdam hangt het wegdek aan stalen kabels. De kabels <b>trekken</b> het wegdek omhoog. Ze zitten vast aan de hoge schuine paal, en die wordt door al die kabels in elkaar <b>gedrukt</b>. Staal is sterk bij trekken. Beton en dikke stalen palen zijn sterk bij duwen. Een goed ontwerp geeft elk materiaal de taak waar het goed in is.</p>
+
+    <h2>Water tegenhouden</h2>
+    <p>Nederland ligt voor een groot deel onder zeeniveau, dus kracht van water is hier serieus werk. Bij storm kan de Maeslantkering bij Hoek van Holland de Nieuwe Waterweg afsluiten. Twee drijvende deuren draaien dan de rivier in en zinken op hun plek. Elke deur is meer dan 200 meter lang. Het zeewater duwt er met een gigantische kracht tegen, en die kracht moet via enorme stalen armen naar de oever worden geleid.</p>
+
+    <h2>Vliegtuigen en raketten</h2>
+    <div class="force-grid">
+      <div><b>Zwaartekracht</b><span>trekt omlaag</span></div>
+      <div><b>Liftkracht</b><span>de vleugels duwen omhoog</span></div>
+      <div><b>Stuwkracht</b><span>de motoren duwen vooruit</span></div>
+      <div><b>Luchtweerstand</b><span>de lucht remt af</span></div>
+    </div>
+    <p>Een groot passagiersvliegtuig weegt bij het opstijgen honderden tonnen. Toch komt het van de grond, omdat de lucht die over en onder de vleugels stroomt een liftkracht geeft die groter is dan de zwaartekracht. Vliegt het rechtdoor op dezelfde hoogte en snelheid, dan zijn alle vier de krachten in evenwicht.</p>
+    <p>Een raket heeft geen vleugels nodig. Hij stijgt op omdat de motoren hete gassen met zoveel kracht naar beneden blazen dat de stuwkracht groter wordt dan de zwaartekracht. Tegenwoordig landen sommige raketten zelfs weer rechtop. Ze remmen dan af door hun motor net op het goede moment opnieuw aan te zetten, zodat stuwkracht en zwaartekracht vlak boven de grond in evenwicht komen.</p>
+
+    <h2>Wat kun je ermee worden?</h2>
+    <ul class="checks">
+      <li><b>Bouwkundig of civiel ingenieur</b>, die bruggen, tunnels, torens en dijken ontwerpt.</li>
+      <li><b>Vliegtuigtechnicus</b>, via een mbo-opleiding luchtvaarttechniek.</li>
+      <li><b>Lucht- en ruimtevaartingenieur</b>, bijvoorbeeld na een studie aan de TU Delft.</li>
+    </ul>
+    <p><a class="back-link" href="#explore">← Terug naar Ontdek bèta</a></p>
+  </div>
+</section>
+
+<section data-view="ontdek-elektriciteit" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <a class="back-link" href="#explore">← Terug naar Ontdek bèta</a>
+    <p class="eyebrow">Elektriciteit → Duurzame energie</p>
+    <h1>Elektriciteit: van bliksem tot windpark</h1>
+    <p class="lede">Je telefoon, je lampen, de trein en steeds meer auto's: alles draait op stroom. Hoe werkt dat, en hoe maken we die stroom zonder de aarde op te warmen?</p>
+  </div></div>
+
+  <div class="wrap section prose">
+    <h2>Stroom is lading die beweegt</h2>
+    <p>In een metalen draad zitten piepkleine deeltjes met een lading: elektronen. Als ze allemaal dezelfde kant op schuiven, loopt er <b>stroom</b>. Dat kan alleen als de kring helemaal rond is. Een schakelaar maakt een opening in de kring, en dan stopt de stroom.</p>
+    <div class="example">
+      <p class="eyebrow">Drie woorden die je in klas 2 leert</p>
+      <p><b>Spanning</b> (volt, V): hoe hard de stroom wordt "geduwd". Een AA-batterij geeft 1,5 V, een stopcontact in Nederland 230 V.<br>
+      <b>Stroomsterkte</b> (ampère, A): hoeveel lading er per seconde langskomt.<br>
+      <b>Vermogen</b> (watt, W): hoeveel energie een apparaat per seconde gebruikt. Een ledlamp gebruikt een paar watt, een waterkoker ongeveer 2000 W.</p>
+    </div>
+
+    <h2>Elektriciteit in de natuur</h2>
+    <p><b>Bliksem</b> is een gigantische vonk. In een onweerswolk botsen ijsdeeltjes tegen elkaar, waardoor de onderkant en de bovenkant een tegengestelde lading krijgen. Wordt het verschil te groot, dan springt de lading in een flits over. De lucht in het kanaal van de bliksem wordt daarbij heter dan het oppervlak van de zon. De knal van de donder is die lucht, die plotseling uitzet.</p>
+    <p>Ook <b>je eigen lichaam</b> werkt met elektriciteit. Je zenuwen sturen kleine elektrische signalen van je hersenen naar je spieren. Een hartfilmpje (ECG) meet de elektrische signalen van je hart, en een AED geeft een stroomstoot om een hart dat chaotisch klopt weer in het goede ritme te krijgen.</p>
+
+    <h2>Serie of parallel?</h2>
+    <p>In een <b>serieschakeling</b> zitten lampjes achter elkaar in één kring. Gaat er één kapot, dan gaan ze allemaal uit. Bij een <b>parallelschakeling</b> heeft elk apparaat een eigen weg. In je huis is alles parallel geschakeld. Daarom kun je de lamp uitzetten terwijl de koelkast gewoon doorwerkt.</p>
+
+    <h2>Hoeveel stroom gebruiken we?</h2>
+    <p>Op de energierekening staat het verbruik in <b>kilowattuur</b> (kWh). Een apparaat van 1000 W dat één uur aanstaat, gebruikt 1 kWh. Een gemiddeld Nederlands huishouden gebruikt een paar duizend kWh per jaar. In de accu van een elektrische auto past vaak tussen de 50 en 80 kWh. Met één volle accu zou je een gewoon huis dus enkele dagen van stroom kunnen voorzien.</p>
+
+    <h2>Duurzame stroom maken</h2>
+    <p><b>Windmolens</b> werken met een generator. De wind draait de wieken, en die draaien magneten langs spoelen van koperdraad. Een bewegende magneet bij een spoel wekt stroom op. Hetzelfde idee zit in een fietsdynamo, alleen veel groter. De nieuwste windturbines op zee zijn hoger dan de Euromast, en één zo'n turbine kan stroom leveren voor duizenden huishoudens.</p>
+    <p><b>Zonnepanelen</b> hebben geen bewegende delen. Licht maakt in het materiaal van het paneel elektronen los, en die gaan stromen. Een omvormer zet die stroom om naar het soort stroom dat in het stopcontact zit.</p>
+    <p>Het lastige: het waait en schijnt niet altijd, maar we willen wel altijd stroom. Daarom werken ingenieurs aan grote batterijen, aan het opslaan van energie in waterstof, en aan slimme netten die stroom verdelen naar de plek waar hij op dat moment nodig is. Daar zijn de komende jaren heel veel technici en ingenieurs voor nodig.</p>
+
+    <h2>Wat kun je ermee worden?</h2>
+    <ul class="checks">
+      <li><b>Elektrotechnicus of installateur</b>, bijvoorbeeld van zonnepanelen, warmtepompen en laadpalen, via het mbo.</li>
+      <li><b>Energietechnicus</b>, die werkt aan windparken en het stroomnet.</li>
+      <li><b>Medisch technicus</b>, die apparaten als ECG's en scanners in ziekenhuizen onderhoudt.</li>
+      <li><b>Ingenieur duurzame energie</b>, na een hbo- of universitaire studie.</li>
+    </ul>
+    <p><a class="back-link" href="#explore">← Terug naar Ontdek bèta</a></p>
+  </div>
+</section>
+
+<section data-view="artikel" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <a class="back-link" href="#explore">← Terug naar Ontdek bèta</a>
+    <p class="eyebrow" id="art-cat">Ontdek bèta</p>
+    <h1 id="art-title">Artikel</h1>
+    <p class="lede" id="art-lede"></p>
+  </div></div>
+  <div class="wrap section prose">
+    <div class="article-body" id="art-body"></div>
+    <p id="art-source" hidden></p>
+    <p><a class="back-link" href="#explore">← Terug naar Ontdek bèta</a></p>
+  </div>
+</section>
+
+<!-- ============ VOOR SCHOLEN ============ -->
+<section data-view="schools" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <p class="eyebrow">Voor scholen</p>
+    <h1>Gratis extra hulp voor uw leerlingen</h1>
+    <p class="lede">Wij geven leerlingen in klas 1 en 2 gratis online uitleglessen en huiswerkhulp in wiskunde en natuurkunde. U verwijst de leerlingen door die het nodig hebben.</p>
+  </div></div>
+
+  <div class="wrap section">
+    <div class="grid-3">
+      <div class="tile static"><p class="eyebrow">Wij bieden</p><h3>Gratis lessen</h3><p>Online uitleglessen en huiswerkhulp, groepen van maximaal 10, passend bij de stof van klas 1 en 2.</p></div>
+      <div class="tile static"><p class="eyebrow">U doet</p><h3>Doorverwijzen</h3><p>Een vast contactpersoon die leerlingen doorverwijst en af en toe een kort feedbackformulier invult.</p></div>
+      <div class="tile static"><p class="eyebrow">U krijgt</p><h3>Inzicht</h3><p>Geanonimiseerde rapportages over aanwezigheid, zelfvertrouwen en vooruitgang van uw leerlingen.</p></div>
+    </div>
+  </div>
+
+  <div class="band"><div class="wrap section">
+    <h2>Zo verwijst u een leerling door</h2>
+    <ol class="steps four">
+      <li><h3>Signaleren</h3><p>Een leerling loopt vast en heeft geen hulp buiten school.</p></li>
+      <li><h3>Bespreken</h3><p>Vertel dat BetaBoost gratis is, online en in kleine groepjes.</p></li>
+      <li><h3>Link delen</h3><p>Stuur leerling en ouders naar de aanmeldpagina.</p></li>
+      <li><h3>Contact houden</h3><p>Wij laten weten wanneer de leerling begint.</p></li>
+    </ol>
+  </div></div>
+
+  <div class="wrap section">
+    <h2>Veelgestelde vragen</h2>
+    <div class="faq">
+      <details><summary>Wat kost het de school of het gezin?</summary><p>Niets. BetaBoost is gratis voor leerlingen, ouders en scholen.</p></details>
+      <details><summary>Hoe werken de online lessen?</summary><p>Leerlingen doen mee aan een live les via Zoom. De docent legt het onderwerp uit, werkt voorbeelden uit en beantwoordt vragen. Groepen hebben nooit meer dan 10 leerlingen.</p></details>
+      <details><summary>Welke leerlingen kunnen meedoen?</summary><p>Leerlingen in klas 1 en 2 die extra hulp nodig hebben bij wiskunde of natuurkunde, met voorrang voor leerlingen zonder betaalde bijles.</p></details>
+      <details><summary>Wanneer zijn de lessen?</summary><p>Buiten schooltijd: doordeweekse middagen en avonden, woensdagmiddag en zaterdagochtend. We passen het rooster aan op de vraag.</p></details>
+      <details><summary>Hoe houdt u leerlingen online veilig?</summary><p>Alle lessen zijn groepslessen. Docenten nemen geen privécontact op met leerlingen. Er gelden gedragsregels, lesregels en een meldprocedure, die we met partnerscholen doornemen.</p></details>
+      <details><summary>Wat gebeurt er met de gegevens van leerlingen?</summary><p>We verzamelen alleen wat nodig is om leerlingen te plaatsen en te begeleiden, met toestemming van ouders voor leerlingen jonger dan 16, en bewaren het veilig. Zie de privacyverklaring.</p></details>
+      <details><summary>Hoe houden we contact?</summary><p>Via één vast contactpersoon op uw school, per e-mail, met elk trimester een korte update.</p></details>
+    </div>
+  </div>
+
+  <div class="band"><div class="wrap section form-wrap">
+    <form id="school-form" class="form" novalidate>
+      <h2>Interesse om partnerschool te worden?</h2>
+      <p>Laat uw gegevens achter. We sturen het informatiepakket en stellen een kort kennismakingsgesprek voor.</p>
+      <div class="row">
+        <label>School<input id="s-school" name="school" required></label>
+        <label>Plaats<input id="s-city" name="city" required></label>
+      </div>
+      <div class="row">
+        <label>Uw naam<input id="s-name" name="name" required autocomplete="name"></label>
+        <label>Uw functie<input id="s-role" name="role" placeholder="Bijvoorbeeld: docent wiskunde, mentor, zorgcoördinator"></label>
+      </div>
+      <label>E-mailadres<input id="s-email" name="email" type="email" required autocomplete="email"></label>
+      <label>Wilt u nog iets kwijt?<textarea id="s-msg" name="message" rows="3"></textarea></label>
+      <p class="form-error" id="school-error" hidden></p>
+      <button class="btn btn-lift" type="submit">Informatiepakket aanvragen</button>
+    </form>
+    <div class="form-done" id="school-done" hidden>
+      <h2>Bedankt, we nemen contact op</h2>
+      <p>We mailen het informatiepakket en stellen een paar momenten voor een kort kennismakingsgesprek voor.</p>
+    </div>
+    <aside class="side-note">
+      <h3>Het informatiepakket</h3>
+      <ul class="plain">
+        <li>Overzicht op één pagina</li><li>Informatieblad over het programma</li><li>Handleiding voor doorverwijzen</li><li>Overzicht van hoe we resultaten meten</li><li>Veelgestelde vragen</li>
+      </ul>
+    </aside>
+  </div></div>
+</section>
+
+<!-- ============ OVER ONS ============ -->
+<section data-view="about" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <p class="eyebrow">Over BetaBoost</p>
+    <h1>Je kansen in de bètavakken horen niet af te hangen van wat je ouders kunnen betalen</h1>
+  </div></div>
+  <div class="wrap section prose">
+    <h2>Onze missie</h2>
+    <p>BetaBoost haalt financiële drempels weg voor leerlingen uit gezinnen met een kleiner inkomen, in klas 1 en 2 van het voortgezet onderwijs. We combineren gratis bijles in kleine groepjes met gratis online lesmateriaal en laten zien waar bètavakken naartoe kunnen leiden.</p>
+    <p>Betere cijfers zijn mooi meegenomen, maar niet het hoofddoel. We willen dat leerlingen geloven dat ze wiskunde en natuurkunde kunnen begrijpen, er beter in kunnen worden en er later misschien voor kiezen.</p>
+
+    <h2>Hoe verandering ontstaat</h2>
+    <ol class="flow inline" aria-label="Veranderingstheorie">
+      <li>Toegang</li><li>Begrip</li><li>Zelfvertrouwen</li><li>Nieuwsgierigheid</li><li>Blijven kiezen voor bèta</li>
+    </ol>
+    <p>Regelmatige hulp lost concrete problemen op. Problemen oplossen geeft zelfvertrouwen, met zelfvertrouwen is moeilijke stof minder eng, en dan ontstaat er ruimte voor nieuwsgierigheid.</p>
+
+    <h2>Waar we nu staan</h2>
+    <p>De eerste zes maanden geven de oprichters alle lessen zelf, met maximaal 10 leerlingen per groep. Zo testen we het lesprogramma, leren we waar leerlingen echt op vastlopen en meten we resultaten voordat we meer docenten aannemen. We groeien pas als de kwaliteit gelijk blijft.</p>
+    <p>Ons doel is 500 tot 900 leerlingen te bereiken: een deel via live lessen, en veel meer via de gratis uitleg en oefeningen op deze site.</p>
+
+    <h2>De oprichters</h2>
+    <p class="placeholder">Hier komen de namen en foto’s van de oprichters en het verhaal achter BetaBoost.</p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section data-view="contact" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h1>Neem contact op</h1>
+  </div></div>
+  <div class="wrap section">
+    <div class="grid-2">
+      <div class="tile static">
+        <h3>Scholen, leerlingen en ouders</h3>
+        <p>Vragen over de lessen, samenwerking met scholen, doorverwijzingen en het informatiepakket.</p>
+        <p class="copy-row"><code id="mail-info">informatie.betaboost@gmail.com</code><button class="btn btn-small" data-copy="mail-info">Kopieer</button></p>
+      </div>
+      <div class="tile static">
+        <h3>Privacy en aanmeldingen</h3>
+        <p>Vragen over een aanmelding, toestemming intrekken, gegevens inzien of laten verwijderen.</p>
+        <p class="copy-row"><code id="mail-hulp">hulp.betaboost@gmail.com</code><button class="btn btn-small" data-copy="mail-hulp">Kopieer</button></p>
+      </div>
+    </div>
+    <div class="socials">
+      <p><b>Instagram</b> voor lesaankondigingen, studietips en bèta in het echt: <code>@betaboost</code></p>
+      <p><b>LinkedIn</b> voor partnerscholen en nieuws over het project: <code>BetaBoost</code></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEEDBACK ============ -->
+<section data-view="feedback" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <p class="eyebrow">Feedback op de les</p>
+    <h1>Hoe was je les?</h1>
+    <p class="lede">Vier vragen, minder dan een minuut. Het is niet verplicht en het helpt ons de volgende les beter te maken.</p>
+  </div></div>
+  <div class="wrap section form-wrap">
+    <form id="feedback-form" class="form" novalidate>
+      <div class="checkset" role="radiogroup" aria-label="Had je iets aan deze les?">
+        <span class="set-label">Had je iets aan deze les?</span>
+        <label class="check"><input type="radio" id="f-help-y" name="helpful" value="Ja" required> <span>Ja</span></label>
+        <label class="check"><input type="radio" id="f-help-s" name="helpful" value="Een beetje"> <span>Een beetje</span></label>
+        <label class="check"><input type="radio" id="f-help-n" name="helpful" value="Nee"> <span>Nee</span></label>
+      </div>
+      <div class="checkset" role="radiogroup" aria-label="Snap je het onderwerp nu beter?">
+        <span class="set-label">Snap je het onderwerp nu beter?</span>
+        <label class="check"><input type="radio" id="f-und-y" name="understand" value="Ja"> <span>Ja</span></label>
+        <label class="check"><input type="radio" id="f-und-b" name="understand" value="Een beetje"> <span>Een beetje</span></label>
+        <label class="check"><input type="radio" id="f-und-n" name="understand" value="Nee"> <span>Nee</span></label>
+      </div>
+      <div class="checkset" role="radiogroup" aria-label="Het tempo was">
+        <span class="set-label">Het tempo was…</span>
+        <label class="check"><input type="radio" id="f-pace-s" name="pace" value="Te langzaam"> <span>Te langzaam</span></label>
+        <label class="check"><input type="radio" id="f-pace-r" name="pace" value="Goed"> <span>Goed</span></label>
+        <label class="check"><input type="radio" id="f-pace-f" name="pace" value="Te snel"> <span>Te snel</span></label>
+      </div>
+      <label>Wat is nog niet duidelijk?<textarea id="f-unclear" name="unclear" rows="3"></textarea></label>
+      <p class="form-error" id="feedback-error" hidden></p>
+      <button class="btn btn-lift" type="submit">Feedback versturen</button>
+    </form>
+    <div class="form-done" id="feedback-done" hidden>
+      <h2>Bedankt!</h2>
+      <p>We lezen elke reactie en gebruiken die om de volgende lessen te plannen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIVACY ============ -->
+<section data-view="policies" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <p class="eyebrow">Privacy en veiligheid</p>
+    <h1>Privacyverklaring en lesregels</h1>
+    <p class="lede">Versie 2, oktober 2026. We nemen deze tekst door met onze partnerscholen voordat de lessen starten.</p>
+  </div></div>
+  <div class="wrap section prose">
+    <h2>Wie zijn wij?</h2>
+    <p>BetaBoost geeft gratis online bijles in wiskunde en natuurkunde aan leerlingen in klas 1 en 2. BetaBoost is verantwoordelijk voor de gegevens die we verzamelen. Voor vragen over privacy mailt u naar <code>hulp.betaboost@gmail.com</code>.</p>
+    <p class="placeholder">Vul hier de officiële naam en rechtsvorm in (bijvoorbeeld een stichting) en de namen van de oprichters.</p>
+
+    <h2>Welke gegevens verzamelen we?</h2>
+    <ul class="plain">
+      <li><b>Over de leerling:</b> voor- en achternaam, leeftijd, klas, school, schoolmailadres, vakken en onderwerpen waar hulp bij nodig is, of de leerling nu bijles heeft, de gekozen lessen en eventuele huiswerkvragen.</li>
+      <li><b>Over de ouder of verzorger:</b> naam, e-mailadres en, als u dat invult, een telefoonnummer.</li>
+      <li><b>Toestemming:</b> welke toestemmingen u gaf en wanneer.</li>
+      <li><b>Als u daarvoor toestemming geeft:</b> antwoorden op korte vragenlijsten over zelfvertrouwen en interesse in bètavakken.</li>
+    </ul>
+    <p>We vragen geen adres, burgerservicenummer of schoolcijfers van de leerling.</p>
+
+    <h2>Waarom en op welke grond?</h2>
+    <p>We gebruiken de gegevens om aanmeldingen te beoordelen, leerlingen in de juiste groep te plaatsen, Zoom-links en berichten te sturen, huiswerkvragen voor te bereiden, misbruik tegen te gaan (zie de <a href="#voorwaarden">algemene voorwaarden</a>) en, met aparte toestemming, te meten of BetaBoost helpt. Omdat leerlingen jonger dan 16 zijn, doen we dit alleen met toestemming van een ouder of verzorger (artikel 6 en 8 AVG en artikel 5 UAVG).</p>
+    <p>Om te controleren dat het schoolmailadres echt bestaat, sturen we er een code naartoe. Bij twijfel over een aanmelding kunnen we de school vragen te bevestigen dat de leerling daar in klas 1 of 2 zit. We delen daarvoor alleen naam, klas en school.</p>
+
+    <h2>Wie kan de gegevens zien?</h2>
+    <p>Alleen de oprichters van BetaBoost. Aanmeldingen worden opgeslagen in een afgeschermd Google-spreadsheet dat alleen zij kunnen openen, en als mail gestuurd naar het afgeschermde adres <code>hulp.betaboost@gmail.com</code>. Beide accounts hebben tweestapsverificatie. Op de website is alleen het aantal vrije plekken per les te zien, nooit namen of andere gegevens.</p>
+    <p>We gebruiken twee diensten die gegevens voor ons verwerken: Google (opslag en e-mail) en Zoom (de online lessen). In Zoom gebruikt de leerling alleen de voornaam. We verkopen of delen gegevens nooit met anderen, behalve de controle bij de school die hierboven staat. Scholen krijgen verder alleen anonieme overzichten.</p>
+
+    <h2>Hoe lang bewaren we de gegevens?</h2>
+    <p>Tot het einde van het schooljaar waarin de leerling voor het laatst meedeed. Daarna verwijderen we ze binnen drie maanden, ook uit de mailbox. Afgewezen aanmeldingen verwijderen we binnen drie maanden. Anonieme resultaten van vragenlijsten, die niet meer naar een leerling te herleiden zijn, kunnen we langer bewaren.</p>
+
+    <h2>Uw rechten</h2>
+    <p>U kunt de gegevens van uw kind altijd inzien, laten verbeteren of laten verwijderen, en u kunt uw toestemming op elk moment intrekken. Mail daarvoor naar <code>hulp.betaboost@gmail.com</code>. We reageren binnen een maand. Bent u het niet eens met hoe we met gegevens omgaan, dan kunt u een klacht indienen bij de Autoriteit Persoonsgegevens.</p>
+
+    <h2>Lessen opnemen</h2>
+    <p>We nemen de lessen niet op. Een camera aanzetten is niet verplicht.</p>
+
+    <h2>Lesregels</h2>
+    <ul class="plain">
+      <li>Wees vriendelijk en respectvol tegen iedereen in de les.</li>
+      <li>Gebruik in Zoom alleen je voornaam. Zet je microfoon op stil als je niet praat.</li>
+      <li>Deel de Zoom-link met niemand anders.</li>
+      <li>Maak geen screenshots of opnames van de les of van andere leerlingen.</li>
+      <li>Stel je vragen hardop of in de groepschat, nooit via privéberichten.</li>
+      <li>Kun je niet komen? Meld je af via <code>hulp.betaboost@gmail.com</code>, dan kan iemand van de wachtlijst je plek krijgen.</li>
+    </ul>
+
+    <h2>Contact tussen docenten en leerlingen</h2>
+    <p>Docenten spreken leerlingen alleen in de groepslessen. Berichten buiten de les gaan per e-mail naar de ouder of verzorger. Docenten gebruiken geen privéberichten, WhatsApp of sociale media om leerlingen te benaderen.</p>
+
+    <h2>Een zorg melden</h2>
+    <p>Gebeurt er iets in een les waar u of uw kind zich zorgen over maakt, mail dan naar <code>hulp.betaboost@gmail.com</code>. We reageren binnen twee werkdagen en betrekken zo nodig de school.</p>
+    <p class="placeholder">Een vaste vertrouwenspersoon en de volledige meldprocedure worden nog vastgelegd met de partnerscholen.</p>
+  </div>
+</section>
+
+<!-- ============ VOORWAARDEN ============ -->
+<section data-view="voorwaarden" hidden>
+  <div class="page-head graph"><div class="wrap">
+    <p class="eyebrow">Algemene voorwaarden</p>
+    <h1>Voor wie BetaBoost is, en hoe we misbruik tegengaan</h1>
+    <p class="lede">Versie 1, oktober 2026. Met een aanmelding gaat de ouder of verzorger akkoord met deze voorwaarden.</p>
+  </div></div>
+  <div class="wrap section prose">
+    <h2>1. Voor wie BetaBoost is</h2>
+    <p>BetaBoost is gratis bijles voor leerlingen in klas 1 en 2 van een middelbare school in Nederland, die extra hulp nodig hebben bij wiskunde of natuurkunde en daarvoor geen betaalde bijles kunnen krijgen. De plekken zijn beperkt: maximaal 10 leerlingen per les. Elke plek die iemand buiten deze doelgroep inneemt, gaat ten koste van een leerling voor wie BetaBoost bedoeld is.</p>
+
+    <h2>2. Aanmelden en accepteren</h2>
+    <ul class="plain">
+      <li>Elke aanmelding wordt door ons beoordeeld. Pas na acceptatie heeft de leerling een plek. De ouder of verzorger krijgt daarover een mail.</li>
+      <li>Tot de beoordeling houden we de gekozen plek vast.</li>
+      <li>Leerlingen die al regelmatig betaalde bijles hebben, kunnen minder voorrang krijgen.</li>
+      <li>We kunnen een aanmelding zonder opgaaf van redenen weigeren als we twijfelen of de leerling tot de doelgroep hoort.</li>
+    </ul>
+
+    <h2>3. Juiste gegevens</h2>
+    <ul class="plain">
+      <li>De ouder of verzorger verklaart dat de ingevulde gegevens kloppen.</li>
+      <li>Per leerling is er één aanmelding. Wil je later andere lessen, mail ons dan.</li>
+      <li>Het schoolmailadres is van de leerling zelf, op de school die is ingevuld.</li>
+    </ul>
+
+    <h2>4. Hoe we controleren</h2>
+    <ul class="plain">
+      <li>We controleren of het schoolmailadres echt is: het moet een schooladres zijn en de leerling moet een code invullen die we ernaartoe sturen.</li>
+      <li>We controleren of school, klas en leeftijd bij elkaar passen, en letten op dubbele aanmeldingen.</li>
+      <li>Bij twijfel kunnen we de school vragen te bevestigen dat de leerling daar in klas 1 of 2 zit.</li>
+      <li>We houden bij wie er in de lessen aanwezig is.</li>
+    </ul>
+
+    <h2>5. Wat we als misbruik zien</h2>
+    <ul class="plain">
+      <li>Valse gegevens of de gegevens van iemand anders invullen.</li>
+      <li>Iemand aanmelden die niet tot de doelgroep hoort.</li>
+      <li>De Zoom-link delen met mensen die niet zijn aangemeld.</li>
+      <li>Herhaaldelijk niet komen zonder je af te melden, waardoor een plek leeg blijft terwijl er een wachtlijst is.</li>
+      <li>Je niet houden aan de <a href="#policies">lesregels</a>.</li>
+    </ul>
+
+    <h2>6. Wat er dan gebeurt</h2>
+    <p>We nemen eerst contact op met de ouder of verzorger. Afhankelijk van wat er is gebeurd, vervalt de plek, wordt de aanmelding geweigerd of kan de leerling niet meer meedoen. De vrijgekomen plek gaat naar de wachtlijst.</p>
+
+    <h2>7. Afmelden en vragen</h2>
+    <p>Afmelden voor een les of helemaal stoppen kan altijd via <code>hulp.betaboost@gmail.com</code>. Voor andere vragen mailt u naar <code>informatie.betaboost@gmail.com</code>. We kunnen deze voorwaarden aanpassen; de nieuwste versie staat altijd op deze pagina.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <a class="logo" href="#home"><svg class="logo-mark" viewBox="0 0 512 512" aria-hidden="true"><circle cx="256" cy="256" r="244" fill="#0F918B" stroke="#D3EEEC" stroke-width="16"/><path fill="#FFFFFF" transform="translate(143.07 363.30) scale(0.19651 -0.19651)" d="M-13 -418H204L301 174C333 40 436 -19 585 -19C851 -19 1061 167 1104 427C1140 642 1027 751 853 798C1018 844 1129 938 1157 1108C1195 1346 1025 1510 758 1510C480 1510 277 1339 233 1070ZM570 178C395 178 319 285 342 424L452 1087C475 1223 583 1310 736 1310C882 1310 962 1228 939 1094C915 956 806 872 660 872H584L555 696H685C838 696 918 597 891 437C864 277 740 178 570 178Z"/></svg><span>BetaBoost</span></a>
+      <p class="fine">Drempels weg. Zelfvertrouwen omhoog.<br>Gratis online bijles in de bètavakken.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#register">Aanmelden</a>
+      <a href="#sessions">Lessen</a>
+      <a href="#feedback">Feedback op de les</a>
+      <a href="#schools">Voor scholen</a>
+      <a href="#policies">Privacy en veiligheid</a>
+      <a href="#voorwaarden">Algemene voorwaarden</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
