@@ -20,10 +20,10 @@
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="logo" href="#home" aria-label="BètaVonk home">
+    <span class="logo">
       <svg class="logo-mark" viewBox="0 0 512 512" aria-hidden="true"><circle cx="256" cy="256" r="244" fill="#0F918B" stroke="#D3EEEC" stroke-width="16"/><path fill="#FFFFFF" transform="translate(143.07 363.30) scale(0.19651 -0.19651)" d="M-13 -418H204L301 174C333 40 436 -19 585 -19C851 -19 1061 167 1104 427C1140 642 1027 751 853 798C1018 844 1129 938 1157 1108C1195 1346 1025 1510 758 1510C480 1510 277 1339 233 1070ZM570 178C395 178 319 285 342 424L452 1087C475 1223 583 1310 736 1310C882 1310 962 1228 939 1094C915 956 806 872 660 872H584L555 696H685C838 696 918 597 891 437C864 277 740 178 570 178Z"/></svg>
       <span>BètaVonk</span>
-    </a>
+    </span>
     <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="site-nav" id="site-nav" aria-label="Hoofdmenu">
       <a href="#home">Thuis</a>
@@ -34,6 +34,7 @@
       <a href="#schools">Voor scholen</a>
       <a href="#about">Over ons</a>
       <a href="#contact">Contact</a>
+      <a class="nav-feedback" href="#feedback">Feedback</a>
       <a class="btn btn-lift nav-cta" href="#register">Gratis aanmelden</a>
     </nav>
   </div>
@@ -62,7 +63,7 @@
     </div>
   </div>
 
-  <div class="wrap"><div class="facts">
+  <div class="wrap facts-wrap"><div class="facts">
     <div class="fact"><span class="fact-n">€0</span><span>Bijles is helemaal gratis</span></div>
     <div class="fact"><span class="fact-n">10</span><span>Leerlingen per groep, maximaal</span></div>
     <div class="fact"><span class="fact-n">100%</span><span>online</span></div>
@@ -76,9 +77,13 @@
       <h2>Kies wat bij je past</h2>
     </div>
     <div class="grid-3">
-      <a class="tile" href="#register"><h3>Leerlingen en ouders</h3><p>Gratis uitleglessen in groepjes van maximaal 10. Wie meedoet, kan ook huiswerkhulp krijgen.</p><span class="tile-link">Aanmelden</span></a>
+      <a class="tile" href="#register"><h3>Leerlingen</h3><p>Gratis uitleglessen in groepjes van maximaal 10. Wie meedoet, kan ook huiswerkhulp krijgen.</p><span class="tile-link">Aanmelden</span></a>
       <a class="tile" href="#resources"><h3>Zelf oefenen</h3><p>Gratis uitleg en oefeningen in je eigen tempo, zonder account.</p><span class="tile-link">Naar oefenmateriaal</span></a>
       <a class="tile" href="#schools"><h3>Docenten en scholen</h3><p>Verwijs leerlingen door die extra hulp goed kunnen gebruiken.</p><span class="tile-link">Voor scholen</span></a>
+    </div>
+    <div class="callout feedback-callout">
+      <p><b>Had je al een les?</b> Vertel ons in twee minuten hoe het ging. Het is anoniem, en we passen de volgende les erop aan.</p>
+      <a class="btn btn-lift" href="#feedback">Geef feedback</a>
     </div>
   </div>
 
@@ -119,7 +124,10 @@
         <h3>Uitlegles</h3>
         <p>Een docent legt één onderwerp uit, doet een voorbeeld voor en daarna oefen je zelf. Elke les heeft dezelfde opbouw:</p>
         <ol class="flow" aria-label="Opbouw van een uitlegles">
-          <li>Uitleg</li><li>Voorbeeld</li><li>Zelf oefenen</li><li>Vragen</li>
+          <li>Uitleg<small>de docent legt het onderwerp uit</small></li>
+          <li>Voorbeeld<small>samen een opgave stap voor stap</small></li>
+          <li>Zelf oefenen<small>jij probeert, wij kijken mee</small></li>
+          <li>Vragen<small>alles wat nog niet klopt</small></li>
         </ol>
       </div>
       <div class="tile static">
@@ -162,6 +170,10 @@
     <div class="callout">
       <p><b>Ook huiswerkhulp?</b> Doe je mee aan de uitleglessen, dan kun je bij het aanmelden ook huiswerkhulp-lessen kiezen en je huiswerkvraag van tevoren insturen.</p>
       <a class="btn btn-ghost" href="#register">Naar aanmelden</a>
+    </div>
+    <div class="callout feedback-callout">
+      <p><b>Les gehad?</b> Laat weten wat goed ging en wat nog niet duidelijk is. Anoniem, in twee minuten.</p>
+      <a class="btn btn-lift" href="#feedback">Geef feedback</a>
     </div>
   </div>
 </section>
@@ -284,9 +296,31 @@
   <div class="page-head graph"><div class="wrap">
     <p class="eyebrow">Oefenmateriaal</p>
     <h1>Gratis uitleg en oefeningen</h1>
-    <p class="lede">Voor iedereen, zonder account. Kies een onderwerp en open de uitleg, de oefeningen of de antwoorden.</p>
+    <p class="lede">Voor iedereen, zonder account. Oefen in de oefenbank met vragen die steeds nieuwe getallen krijgen, of open de uitleg en oefeningen per onderwerp.</p>
   </div></div>
+
+  <div class="wrap section" id="oefenbank">
+    <div class="section-head">
+      <p class="eyebrow">Oefenbank</p>
+      <h2>Oefen zo vaak je wilt</h2>
+      <p class="lede">Kies een onderwerp en je krijgt 10 vragen. Elke reeks heeft nieuwe getallen, en na elke vraag zie je meteen of het klopt, met de uitwerking erbij.</p>
+    </div>
+    <div id="ob-setup" class="ob-setup">
+      <div class="chips" role="group" aria-label="Kies een vak">
+        <button class="chip is-on" data-ob-vak="Wiskunde" aria-pressed="true">Wiskunde</button>
+        <button class="chip" data-ob-vak="Natuurkunde" aria-pressed="false">Natuurkunde</button>
+      </div>
+      <div class="ob-topics" id="ob-topics"></div>
+      <p class="fine">Je beste score per onderwerp wordt alleen in deze browser bewaard. We slaan niets op over wie je bent.</p>
+    </div>
+    <div id="ob-play" class="ob-play" hidden></div>
+  </div>
+
   <div class="wrap section">
+    <div class="section-head">
+      <p class="eyebrow">Lesmateriaal</p>
+      <h2>Uitleg en oefeningen per onderwerp</h2>
+    </div>
     <div class="toolbar">
       <div class="chips" role="group" aria-label="Filter modules op vak">
         <button class="chip is-on" data-mod="all">Alle</button>
@@ -296,6 +330,22 @@
       <p class="hint" id="modules-source"></p>
     </div>
     <div class="module-grid" id="module-grid"></div>
+  </div>
+
+  <div class="wrap section">
+    <div class="section-head">
+      <p class="eyebrow">Nog meer oefenen</p>
+      <h2>Goede gratis oefensites</h2>
+      <p>Deze sites zijn gratis en passen bij klas 1 en 2.</p>
+    </div>
+    <div class="links-grid">
+      <a class="link-card" href="https://www.wiskundeacademie.nl/" target="_blank" rel="noopener"><p class="from">Wiskunde</p><p class="to">Wiskunde Academie</p><p class="desc">Korte uitlegvideo's per onderwerp, ingedeeld per klas en niveau, met voorbeeldopgaven.</p><span class="tile-link">wiskundeacademie.nl</span></a>
+      <a class="link-card" href="https://maken.wikiwijs.nl/35699/Leerlijn_wiskunde_klas_1_havo_vwo__Math4All_" target="_blank" rel="noopener"><p class="from">Wiskunde</p><p class="to">Math4All op Wikiwijs</p><p class="desc">Een complete leerlijn voor klas 1 met uitleg, opgaven en antwoorden. Wat ouder, maar volledig en gratis.</p><span class="tile-link">wikiwijs.nl</span></a>
+      <a class="link-card" href="https://www.geogebra.org/" target="_blank" rel="noopener"><p class="from">Wiskunde</p><p class="to">GeoGebra</p><p class="desc">Schuif met grafieken, figuren en formules en zie direct wat er verandert.</p><span class="tile-link">geogebra.org</span></a>
+      <a class="link-card" href="https://phet.colorado.edu/nl/" target="_blank" rel="noopener"><p class="from">Natuurkunde</p><p class="to">PhET-simulaties</p><p class="desc">Bouw zelf schakelingen, test dichtheid en krachten in simulaties, in het Nederlands.</p><span class="tile-link">phet.colorado.edu</span></a>
+      <a class="link-card" href="https://www.natuurkunde.nl/" target="_blank" rel="noopener"><p class="from">Natuurkunde</p><p class="to">natuurkunde.nl</p><p class="desc">Opdrachten, artikelen en een vraagbaak waar je zelf een natuurkundevraag kunt stellen.</p><span class="tile-link">natuurkunde.nl</span></a>
+      <a class="link-card" href="https://nl.khanacademy.org/" target="_blank" rel="noopener"><p class="from">Wiskunde</p><p class="to">Khan Academy</p><p class="desc">Oefenen met directe feedback en uitlegvideo's. Een deel is in het Nederlands vertaald.</p><span class="tile-link">nl.khanacademy.org</span></a>
+    </div>
   </div>
 
 </section>
@@ -346,14 +396,23 @@
 
     <h2>Je navigatie-app rekent de hele tijd</h2>
     <div class="example">
-      <p class="formula">tijd = afstand ÷ snelheid</p>
+      <figure class="eq">
+        <math display="block"><mi>t</mi><mo>=</mo><mfrac><mi>s</mi><mi>v</mi></mfrac></math>
+        <figcaption>(1)</figcaption>
+      </figure>
+      <p class="where">waarin <i>t</i> de reistijd is (in uur), <i>s</i> de afstand (in km) en <i>v</i> de snelheid (in km/h).</p>
+      <math display="block" class="calc"><mi>t</mi><mo>=</mo><mfrac><mrow><mn>30</mn><mspace width="0.25em"/><mtext>km</mtext></mrow><mrow><mn>60</mn><mspace width="0.25em"/><mtext>km/h</mtext></mrow></mfrac><mo>=</mo><mn>0,5</mn><mspace width="0.25em"/><mtext>h</mtext></math>
       <p>Moet je nog 30 kilometer over een weg waar je 60 km per uur rijdt, dan duurt dat 30 ÷ 60 = een half uur. Een navigatie-app doet dit voor elk stukje weg, met de snelheid van het verkeer van dit moment. Daarna telt hij alles op. Komt er een file, dan verandert de snelheid en rekent de app een nieuwe aankomsttijd uit.</p>
     </div>
 
     <h2>Games: formules die zestig keer per seconde draaien</h2>
     <p>In een game heeft elk poppetje en elke bal een positie en een snelheid. Die staan in variabelen, letters met een getal erin. Bij elk beeldje dat je scherm laat zien, vaak zestig keer per seconde, voert de computer formules uit zoals:</p>
     <div class="example">
-      <p class="formula">positie = positie + snelheid × tijd</p>
+      <figure class="eq">
+        <math display="block"><msub><mi>x</mi><mtext>nieuw</mtext></msub><mo>=</mo><msub><mi>x</mi><mtext>oud</mtext></msub><mo>+</mo><mi>v</mi><mo>·</mo><mi mathvariant="normal">Δ</mi><mi>t</mi></math>
+        <figcaption>(2)</figcaption>
+      </figure>
+      <p class="where">waarin <i>x</i> de positie is, <i>v</i> de snelheid en Δ<i>t</i> de tijd tussen twee beeldjes, bij zestig beeldjes per seconde dus <sup>1</sup>⁄<sub>60</sub> seconde.</p>
       <p>Zo schuift alles een klein stukje op. Springt je personage, dan trekt een andere formule elke keer een beetje van de snelheid omhoog af. Daardoor komt hij in een mooie boog weer naar beneden. Dat is de zwaartekracht, in algebra nagebouwd.</p>
     </div>
 
@@ -386,6 +445,17 @@
   <div class="wrap section prose">
     <h2>Wat is een kracht?</h2>
     <p>Een kracht is een duw of een trek. Je meet krachten in <b>newton</b> (N), genoemd naar Isaac Newton, de Engelse wetenschapper die de regels voor beweging opschreef. Op aarde trekt de zwaartekracht aan alles. Aan elke kilogram trekt hij met ongeveer 10 newton. Op de maan is dat maar ongeveer een zesde daarvan. Daarom konden astronauten daar met hun zware pakken nog hoog springen.</p>
+    <div class="example">
+      <p class="eyebrow">De formule</p>
+      <figure class="eq">
+        <math display="block"><msub><mi>F</mi><mi>z</mi></msub><mo>=</mo><mi>m</mi><mo>·</mo><mi>g</mi></math>
+        <figcaption>(1)</figcaption>
+      </figure>
+      <p class="where">waarin <i>F</i><sub>z</sub> de zwaartekracht is (in N), <i>m</i> de massa (in kg) en <i>g</i> de valversnelling: ongeveer 9,8 N/kg op aarde en 1,6 N/kg op de maan.</p>
+      <p>Een schooltas van 5 kg:</p>
+      <math display="block" class="calc"><msub><mi>F</mi><mi>z</mi></msub><mo>=</mo><mn>5</mn><mspace width="0.25em"/><mtext>kg</mtext><mo>×</mo><mn>9,8</mn><mspace width="0.25em"/><mtext>N/kg</mtext><mo>≈</mo><mn>49</mn><mspace width="0.25em"/><mtext>N</mtext></math>
+      <p>Op de maan is dat 5 × 1,6 = 8 N. Zelfde tas, zes keer zo licht om te tillen.</p>
+    </div>
 
     <h2>Evenwicht: waarom dingen blijven staan</h2>
     <p>Een boek op tafel valt niet, omdat de tafel net zo hard omhoog duwt als de zwaartekracht omlaag trekt. De krachten heffen elkaar op. Dat heet <b>evenwicht</b>. Bij alles wat stil staat, van een stoel tot de hoogste toren ter wereld, moeten de krachten in evenwicht zijn. Een bouwkundig ingenieur rekent uit of dat zo blijft, ook als er duizenden mensen, sneeuw of storm bij komen.</p>
@@ -436,6 +506,17 @@
       <b>Stroomsterkte</b> (ampère, A): hoeveel lading er per seconde langskomt.<br>
       <b>Vermogen</b> (watt, W): hoeveel energie een apparaat per seconde gebruikt. Een ledlamp gebruikt een paar watt, een waterkoker ongeveer 2000 W.</p>
     </div>
+    <p>Die drie hangen samen in één formule:</p>
+    <figure class="eq">
+      <math display="block"><mi>P</mi><mo>=</mo><mi>U</mi><mo>·</mo><mi>I</mi></math>
+      <figcaption>(1)</figcaption>
+    </figure>
+    <p class="where">waarin <i>P</i> het vermogen is (in W), <i>U</i> de spanning (in V) en <i>I</i> de stroomsterkte (in A).</p>
+    <div class="example">
+      <p class="eyebrow">Voorbeeld: de waterkoker</p>
+      <p>Hoeveel stroom loopt er door een waterkoker van 2000 W op het stopcontact van 230 V? Formule (1) omgeschreven:</p>
+      <math display="block" class="calc"><mi>I</mi><mo>=</mo><mfrac><mi>P</mi><mi>U</mi></mfrac><mo>=</mo><mfrac><mrow><mn>2000</mn><mspace width="0.25em"/><mtext>W</mtext></mrow><mrow><mn>230</mn><mspace width="0.25em"/><mtext>V</mtext></mrow></mfrac><mo>≈</mo><mn>8,7</mn><mspace width="0.25em"/><mtext>A</mtext></math>
+    </div>
 
     <h2>Elektriciteit in de natuur</h2>
     <p><b>Bliksem</b> is een gigantische vonk. In een onweerswolk botsen ijsdeeltjes tegen elkaar, waardoor de onderkant en de bovenkant een tegengestelde lading krijgen. Wordt het verschil te groot, dan springt de lading in een flits over. De lucht in het kanaal van de bliksem wordt daarbij heter dan het oppervlak van de zon. De knal van de donder is die lucht, die plotseling uitzet.</p>
@@ -445,7 +526,13 @@
     <p>In een <b>serieschakeling</b> zitten lampjes achter elkaar in één kring. Gaat er één kapot, dan gaan ze allemaal uit. Bij een <b>parallelschakeling</b> heeft elk apparaat een eigen weg. In je huis is alles parallel geschakeld. Daarom kun je de lamp uitzetten terwijl de koelkast gewoon doorwerkt.</p>
 
     <h2>Hoeveel stroom gebruiken we?</h2>
-    <p>Op de energierekening staat het verbruik in <b>kilowattuur</b> (kWh). Een apparaat van 1000 W dat één uur aanstaat, gebruikt 1 kWh. Een gemiddeld Nederlands huishouden gebruikt een paar duizend kWh per jaar. In de accu van een elektrische auto past vaak tussen de 50 en 80 kWh. Met één volle accu zou je een gewoon huis dus enkele dagen van stroom kunnen voorzien.</p>
+    <p>Op de energierekening staat het verbruik in <b>kilowattuur</b> (kWh). Energie is vermogen maal tijd:</p>
+    <figure class="eq">
+      <math display="block"><mi>E</mi><mo>=</mo><mi>P</mi><mo>·</mo><mi>t</mi></math>
+      <figcaption>(2)</figcaption>
+    </figure>
+    <p class="where">waarin <i>E</i> de energie is (in kWh), <i>P</i> het vermogen (in kW) en <i>t</i> de tijd (in uur).</p>
+    <p>Een apparaat van 1000 W, dus 1 kW, dat één uur aanstaat, gebruikt 1 kW × 1 h = 1 kWh. Een gemiddeld Nederlands huishouden gebruikt een paar duizend kWh per jaar. In de accu van een elektrische auto past vaak tussen de 50 en 80 kWh. Met één volle accu zou je een gewoon huis dus enkele dagen van stroom kunnen voorzien.</p>
 
     <h2>Duurzame stroom maken</h2>
     <p><b>Windmolens</b> werken met een generator. De wind draait de wieken, en die draaien magneten langs spoelen van koperdraad. Een bewegende magneet bij een spoel wekt stroom op. Hetzelfde idee zit in een fietsdynamo, alleen veel groter. De nieuwste windturbines op zee zijn hoger dan de Euromast, en één zo'n turbine kan stroom leveren voor duizenden huishoudens.</p>
@@ -558,8 +645,12 @@
     <p>Betere cijfers zijn mooi meegenomen, maar niet het hoofddoel. We willen dat leerlingen geloven dat ze wiskunde en natuurkunde kunnen begrijpen, er beter in kunnen worden en er later misschien voor kiezen.</p>
 
     <h2>Hoe verandering ontstaat</h2>
-    <ol class="flow inline" aria-label="Veranderingstheorie">
-      <li>Toegang</li><li>Begrip</li><li>Zelfvertrouwen</li><li>Nieuwsgierigheid</li><li>Blijven kiezen voor bèta</li>
+    <ol class="flow" aria-label="Veranderingstheorie">
+      <li>Toegang<small>gratis hulp voor iedereen</small></li>
+      <li>Begrip<small>je snapt hoe het werkt</small></li>
+      <li>Zelfvertrouwen<small>“ik kan dit”</small></li>
+      <li>Nieuwsgierigheid<small>je wilt meer weten</small></li>
+      <li>Blijven kiezen voor bèta<small>ook bij je profielkeuze</small></li>
     </ol>
     <p>Regelmatige hulp lost concrete problemen op. Problemen oplossen geeft zelfvertrouwen, met zelfvertrouwen is moeilijke stof minder eng, en dan ontstaat er ruimte voor nieuwsgierigheid.</p>
 
@@ -603,29 +694,70 @@
   <div class="page-head graph"><div class="wrap">
     <p class="eyebrow">Feedback op de les</p>
     <h1>Hoe was je les?</h1>
-    <p class="lede">Vier vragen, minder dan een minuut. Het is niet verplicht en het helpt ons de volgende les beter te maken.</p>
+    <p class="lede">Een paar korte vragen, ongeveer twee minuten. Je feedback is anoniem en helpt ons de volgende les beter te maken.</p>
   </div></div>
   <div class="wrap section form-wrap">
     <form id="feedback-form" class="form" novalidate>
-      <div class="checkset" role="radiogroup" aria-label="Had je iets aan deze les?">
-        <span class="set-label">Had je iets aan deze les?</span>
-        <label class="check"><input type="radio" id="f-help-y" name="helpful" value="Ja" required> <span>Ja</span></label>
-        <label class="check"><input type="radio" id="f-help-s" name="helpful" value="Een beetje"> <span>Een beetje</span></label>
-        <label class="check"><input type="radio" id="f-help-n" name="helpful" value="Nee"> <span>Nee</span></label>
-      </div>
-      <div class="checkset" role="radiogroup" aria-label="Snap je het onderwerp nu beter?">
-        <span class="set-label">Snap je het onderwerp nu beter?</span>
-        <label class="check"><input type="radio" id="f-und-y" name="understand" value="Ja"> <span>Ja</span></label>
-        <label class="check"><input type="radio" id="f-und-b" name="understand" value="Een beetje"> <span>Een beetje</span></label>
-        <label class="check"><input type="radio" id="f-und-n" name="understand" value="Nee"> <span>Nee</span></label>
-      </div>
-      <div class="checkset" role="radiogroup" aria-label="Het tempo was">
-        <span class="set-label">Het tempo was…</span>
-        <label class="check"><input type="radio" id="f-pace-s" name="pace" value="Te langzaam"> <span>Te langzaam</span></label>
-        <label class="check"><input type="radio" id="f-pace-r" name="pace" value="Goed"> <span>Goed</span></label>
-        <label class="check"><input type="radio" id="f-pace-f" name="pace" value="Te snel"> <span>Te snel</span></label>
-      </div>
-      <label>Wat is nog niet duidelijk?<textarea id="f-unclear" name="unclear" rows="3"></textarea></label>
+      <fieldset>
+        <legend>Over de les</legend>
+        <div class="row">
+          <label>Welke les had je?
+            <select id="f-lesson" name="lesson">
+              <option value="">Kies een les</option>
+              <option>Uitlegles wiskunde</option>
+              <option>Uitlegles natuurkunde</option>
+              <option>Huiswerkhulp</option>
+              <option>Anders</option>
+            </select>
+          </label>
+          <label><span>Datum van de les <span class="opt">optioneel</span></span><input type="date" id="f-date" name="lessonDate"></label>
+        </div>
+        <label><span>Onderwerp van de les <span class="opt">optioneel</span></span><input type="text" id="f-topic" name="topic" maxlength="120" placeholder="Bijvoorbeeld: breuken, of dichtheid"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Wat vond je ervan?</legend>
+        <div class="rating" role="radiogroup" aria-label="Welk cijfer geef je de les?">
+          <span class="set-label">Welk cijfer geef je de les?<span class="star" aria-hidden="true">*</span></span>
+          <label><input type="radio" name="rating" value="1" required><span>1</span></label>
+          <label><input type="radio" name="rating" value="2"><span>2</span></label>
+          <label><input type="radio" name="rating" value="3"><span>3</span></label>
+          <label><input type="radio" name="rating" value="4"><span>4</span></label>
+          <label><input type="radio" name="rating" value="5"><span>5</span></label>
+          <span class="rating-ends"><span>slecht</span><span>super</span></span>
+        </div>
+        <div class="checkset" role="radiogroup" aria-label="Had je iets aan deze les?">
+          <span class="set-label">Had je iets aan deze les?</span>
+          <label class="check"><input type="radio" id="f-help-y" name="helpful" value="Ja"> <span>Ja</span></label>
+          <label class="check"><input type="radio" id="f-help-s" name="helpful" value="Een beetje"> <span>Een beetje</span></label>
+          <label class="check"><input type="radio" id="f-help-n" name="helpful" value="Nee"> <span>Nee</span></label>
+        </div>
+        <div class="checkset" role="radiogroup" aria-label="Was de uitleg duidelijk?">
+          <span class="set-label">Was de uitleg duidelijk?</span>
+          <label class="check"><input type="radio" name="clarity" value="Heel duidelijk"> <span>Heel duidelijk</span></label>
+          <label class="check"><input type="radio" name="clarity" value="Grotendeels"> <span>Grotendeels</span></label>
+          <label class="check"><input type="radio" name="clarity" value="Niet echt"> <span>Niet echt</span></label>
+        </div>
+        <div class="checkset" role="radiogroup" aria-label="Snap je het onderwerp nu beter?">
+          <span class="set-label">Snap je het onderwerp nu beter?</span>
+          <label class="check"><input type="radio" id="f-und-y" name="understand" value="Ja"> <span>Ja</span></label>
+          <label class="check"><input type="radio" id="f-und-b" name="understand" value="Een beetje"> <span>Een beetje</span></label>
+          <label class="check"><input type="radio" id="f-und-n" name="understand" value="Nee"> <span>Nee</span></label>
+        </div>
+        <div class="checkset" role="radiogroup" aria-label="Het tempo was">
+          <span class="set-label">Het tempo was…</span>
+          <label class="check"><input type="radio" id="f-pace-s" name="pace" value="Te langzaam"> <span>Te langzaam</span></label>
+          <label class="check"><input type="radio" id="f-pace-r" name="pace" value="Goed"> <span>Goed</span></label>
+          <label class="check"><input type="radio" id="f-pace-f" name="pace" value="Te snel"> <span>Te snel</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>In je eigen woorden</legend>
+        <label><span>Wat ging goed? <span class="opt">optioneel</span></span><textarea id="f-good" name="good" rows="2"></textarea></label>
+        <label><span>Wat is nog niet duidelijk? <span class="opt">optioneel</span></span><textarea id="f-unclear" name="unclear" rows="3"></textarea></label>
+        <label><span>Welk onderwerp wil je nog eens uitgelegd krijgen? <span class="opt">optioneel</span></span><input type="text" id="f-wish" name="wish" maxlength="200"></label>
+      </fieldset>
       <p class="form-error" id="feedback-error" hidden></p>
       <button class="btn btn-lift" type="submit">Feedback versturen</button>
     </form>
@@ -633,6 +765,16 @@
       <h2>Bedankt!</h2>
       <p>We lezen elke reactie en gebruiken die om de volgende lessen te plannen.</p>
     </div>
+    <aside class="side-note">
+      <h3>Wat doen we ermee?</h3>
+      <ul class="plain">
+        <li><b>Anoniem.</b> We vragen niet om je naam of e-mailadres.</li>
+        <li><b>Na elke les gelezen.</b> De docent ziet alle reacties voordat de volgende les begint.</li>
+        <li><b>Je ziet het terug.</b> Wat vaak onduidelijk is, leggen we de volgende keer opnieuw uit.</li>
+        <li><b>Alleen het cijfer is verplicht.</b> Sla over wat je niet wilt invullen.</li>
+      </ul>
+      <p>Wil je een antwoord op je vraag? Stel hem dan in de les of mail ons via de <a href="#contact">contactpagina</a>.</p>
+    </aside>
   </div>
 </section>
 
@@ -749,7 +891,7 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <div>
-      <a class="logo" href="#home"><svg class="logo-mark" viewBox="0 0 512 512" aria-hidden="true"><circle cx="256" cy="256" r="244" fill="#0F918B" stroke="#D3EEEC" stroke-width="16"/><path fill="#FFFFFF" transform="translate(143.07 363.30) scale(0.19651 -0.19651)" d="M-13 -418H204L301 174C333 40 436 -19 585 -19C851 -19 1061 167 1104 427C1140 642 1027 751 853 798C1018 844 1129 938 1157 1108C1195 1346 1025 1510 758 1510C480 1510 277 1339 233 1070ZM570 178C395 178 319 285 342 424L452 1087C475 1223 583 1310 736 1310C882 1310 962 1228 939 1094C915 956 806 872 660 872H584L555 696H685C838 696 918 597 891 437C864 277 740 178 570 178Z"/></svg><span>BètaVonk</span></a>
+      <span class="logo"><svg class="logo-mark" viewBox="0 0 512 512" aria-hidden="true"><circle cx="256" cy="256" r="244" fill="#0F918B" stroke="#D3EEEC" stroke-width="16"/><path fill="#FFFFFF" transform="translate(143.07 363.30) scale(0.19651 -0.19651)" d="M-13 -418H204L301 174C333 40 436 -19 585 -19C851 -19 1061 167 1104 427C1140 642 1027 751 853 798C1018 844 1129 938 1157 1108C1195 1346 1025 1510 758 1510C480 1510 277 1339 233 1070ZM570 178C395 178 319 285 342 424L452 1087C475 1223 583 1310 736 1310C882 1310 962 1228 939 1094C915 956 806 872 660 872H584L555 696H685C838 696 918 597 891 437C864 277 740 178 570 178Z"/></svg><span>BètaVonk</span></span>
       <p class="fine">Drempels weg. Zelfvertrouwen omhoog.<br>Gratis online bijles in de bètavakken.</p>
     </div>
     <nav class="footer-nav" aria-label="Footer">
@@ -765,5 +907,6 @@
 </footer>
 
 <script src="app.js"></script>
+<script src="oefenbank.js"></script>
 </body>
 </html>
