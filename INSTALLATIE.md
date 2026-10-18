@@ -1,4 +1,4 @@
-# Bètavonk website: installatie
+# BètaVonk website: installatie
 
 De website bestaat uit `index.html`, `styles.css`, `app.js` en `logo.svg`. Die kun je op elke statische host zetten (bijvoorbeeld GitHub Pages, Netlify of Cloudflare Pages). Aanmeldingen, oefenmateriaal en Ontdek bèta-artikelen lopen via een klein Google Apps Script dat aan een Google-spreadsheet hangt dat alleen jullie kunnen openen.
 
@@ -6,8 +6,8 @@ Zolang `ENDPOINT` in `app.js` leeg is, draait de site in **voorbeeldmodus**: er 
 
 ## 1. Spreadsheet en formulierservice opzetten
 
-1. Log in met het Google-account van Bètavonk (bij voorkeur hulp.betaboost@gmail.com, want mails aan ouders en leerlingen worden vanaf dit account verstuurd). Zet tweestapsverificatie aan.
-2. Maak een nieuw Google-spreadsheet, bijvoorbeeld "Bètavonk aanmeldingen". Deel het met niemand behalve de oprichters.
+1. Log in met het Google-account van BètaVonk (bij voorkeur hulp.betaboost@gmail.com, want mails aan ouders en leerlingen worden vanaf dit account verstuurd). Zet tweestapsverificatie aan.
+2. Maak een nieuw Google-spreadsheet, bijvoorbeeld "BètaVonk aanmeldingen". Deel het met niemand behalve de oprichters.
 3. Kies **Extensies → Apps Script**. Verwijder de voorbeeldcode en plak de inhoud van `backend/Code.gs`. Klik **Opslaan**.
 4. Kies bovenaan de functie `setup` en klik **Uitvoeren**. Geef toestemming als Google daarom vraagt (zie "Toestemmingen" hieronder). Het spreadsheet krijgt de tabbladen Lessen, Aanmeldingen, Reserveringen, Huiswerkvragen, Scholen, Feedback, Oefenmateriaal en Ontdek.
 5. Klik **Implementeren → Nieuwe implementatie → Web-app**, met:
@@ -57,7 +57,7 @@ Het rooster staat in het tabblad **Lessen**. De website leest het direct uit.
 
 1. Bij elke aanmelding krijgt **hulp.betaboost@gmail.com** een mail met alle gegevens van de leerling, de gekozen lessen en een eventuele huiswerkvraag.
 2. In het tabblad **Aanmeldingen** staat de leerling met status `te beoordelen`. De gekozen lessen staan in **Reserveringen** als `aangevraagd` (de plek wordt vastgehouden) of `wachtlijst` (les vol).
-3. Klik op de rij van de leerling en kies in het menu **Bètavonk → Geselecteerde aanmelding accepteren** of **afwijzen**. Het menu verschijnt als je het spreadsheet opnieuw opent.
+3. Klik op de rij van de leerling en kies in het menu **BètaVonk → Geselecteerde aanmelding accepteren** of **afwijzen**. Het menu verschijnt als je het spreadsheet opnieuw opent.
    - Accepteren: status wordt `geaccepteerd`, `aangevraagd` wordt `geplaatst`, en de ouder krijgt een mail met de lessen.
    - Afwijzen: status wordt `afgewezen`, de reserveringen worden `afgewezen` (de plekken komen vrij), en de ouder krijgt een nette afwijzingsmail.
 4. Wil iemand stoppen, zet de reservering dan op `geannuleerd`. Alleen `aangevraagd` en `geplaatst` tellen mee voor de bezette plekken. Zet daarna iemand van de wachtlijst op `geplaatst` en mail de ouder.
