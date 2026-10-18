@@ -26,7 +26,7 @@ Je doet dit één keer. Daarna zet Claude aanpassingen direct in GitHub en staat
 
 1. Log in op TransIP en ga naar **Domeinen → betavonk.nl → DNS**.
 2. Staat **TransIP-instellingen** aan, zet die dan uit, zodat je de records zelf kunt aanpassen.
-3. Verwijder de bestaande records met naam `@` en `www` van het type A, AAAA en CNAME (laat MX- en TXT-records voor mail staan).
+3. Verwijder alleen records met naam `@` of `www` én type **A**, **AAAA** of **CNAME**. Records van type **MX** en **TXT** zijn voor e-mail: die laat je precies zoals ze zijn, niets aan veranderen.
 4. Voeg deze records toe:
 
 | Naam | Type | Waarde |
