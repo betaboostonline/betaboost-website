@@ -1,4 +1,4 @@
-# Bètavonk website
+# BètaVonk website
 
 Gratis online bijles wiskunde en natuurkunde voor klas 1 en 2. Live op https://betaboost.online (GitHub Pages).
 

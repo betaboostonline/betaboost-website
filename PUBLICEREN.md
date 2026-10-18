@@ -1,4 +1,4 @@
-# Bètavonk op betaboost.online zetten (GitHub Pages + TransIP)
+# BètaVonk op betaboost.online zetten (GitHub Pages + TransIP)
 
 Je doet dit één keer. Daarna zet Claude aanpassingen direct in GitHub en staat de nieuwe versie binnen een paar minuten op betaboost.online.
 
