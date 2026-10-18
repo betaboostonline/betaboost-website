@@ -12,7 +12,7 @@
  * Installatie: zie INSTALLATIE.md.
  */
 
-var VERSIE = '4';  // controle: <web-app-URL>?actie=versie moet {"ok":true,"versie":"4"} geven
+var VERSIE = '5';  // controle: <web-app-URL>?actie=versie moet {"ok":true,"versie":"5"} geven
 var NOTIFY_EMAIL = 'hulp.betaboost@gmail.com';   // krijgt elke aanmelding met de gegevens
 var REPLY_TO = 'hulp.betaboost@gmail.com';        // antwoordadres in mails aan ouders en leerlingen
 var KLASSEN = ['Klas 1', 'Klas 2'];
@@ -34,7 +34,7 @@ var TABS = {
   Reserveringen: ['tijdstip', 'aanmeldId', 'lesId', 'status'],
   Huiswerkvragen: ['tijdstip', 'aanmeldId', 'lesIds', 'vak', 'onderwerp', 'vraag', 'geprobeerd'],
   Scholen: ['tijdstip', 'school', 'plaats', 'naam', 'functie', 'email', 'bericht'],
-  Feedback: ['tijdstip', 'nuttig', 'begrepen', 'tempo', 'onduidelijk'],
+  Feedback: ['tijdstip', 'nuttig', 'begrepen', 'tempo', 'onduidelijk', 'les', 'datum_les', 'onderwerp', 'cijfer', 'uitleg_duidelijk', 'ging_goed', 'wil_nog_eens'],
   Oefenmateriaal: ['module', 'vak', 'klas', 'type', 'titel', 'link', 'volgorde', 'zichtbaar'],
   Ontdek: ['id', 'titel', 'categorie', 'samenvatting', 'tekst', 'bron', 'volgorde', 'zichtbaar']
 };
@@ -302,7 +302,8 @@ function saveSchool(d) {
 }
 
 function saveFeedback(d) {
-  sheet('Feedback').appendRow([new Date(), s(d.helpful, 20), s(d.understand, 20), s(d.pace, 20), s(d.unclear, 1000)]);
+  sheet('Feedback').appendRow([new Date(), s(d.helpful, 20), s(d.understand, 20), s(d.pace, 20), s(d.unclear, 1000),
+    s(d.lesson, 40), s(d.lessonDate, 20), s(d.topic, 120), s(d.rating, 2), s(d.clarity, 20), s(d.good, 1000), s(d.wish, 200)]);
   return { ok: true };
 }
 
