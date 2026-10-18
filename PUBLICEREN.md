@@ -1,6 +1,6 @@
-# BètaVonk op betaboost.online zetten (GitHub Pages + TransIP)
+# BètaVonk op betavonk.nl zetten (GitHub Pages + TransIP)
 
-Je doet dit één keer. Daarna zet Claude aanpassingen direct in GitHub en staat de nieuwe versie binnen een paar minuten op betaboost.online.
+Je doet dit één keer. Daarna zet Claude aanpassingen direct in GitHub en staat de nieuwe versie binnen een paar minuten op betavonk.nl.
 
 ## 1. GitHub-account en repository
 
@@ -20,11 +20,11 @@ Je doet dit één keer. Daarna zet Claude aanpassingen direct in GitHub en staat
 
 1. Open de repository op GitHub en ga naar **Settings → Pages**.
 2. Bij **Source** kies je **Deploy from a branch**, branch **main**, map **/ (root)**, en klik **Save**.
-3. Bij **Custom domain** staat `betaboost.online` al ingevuld (dat komt uit het bestand `CNAME`). Staat het er niet, vul het in en klik **Save**.
+3. Bij **Custom domain** vul je `betavonk.nl` in (zo staat het ook in het bestand `CNAME`) en klik **Save**. Stond hier nog `betaboost.online`, vervang dat dan.
 
 ## 4. DNS instellen bij TransIP
 
-1. Log in op TransIP en ga naar **Domeinen → betaboost.online → DNS**.
+1. Log in op TransIP en ga naar **Domeinen → betavonk.nl → DNS**.
 2. Staat **TransIP-instellingen** aan, zet die dan uit, zodat je de records zelf kunt aanpassen.
 3. Verwijder de bestaande records met naam `@` en `www` van het type A, AAAA en CNAME (laat MX- en TXT-records voor mail staan).
 4. Voeg deze records toe:
@@ -39,15 +39,23 @@ Je doet dit één keer. Daarna zet Claude aanpassingen direct in GitHub en staat
 | @ | AAAA | 2606:50c0:8001::153 |
 | @ | AAAA | 2606:50c0:8002::153 |
 | @ | AAAA | 2606:50c0:8003::153 |
-| www | CNAME | JOUWGEBRUIKERSNAAM.github.io. |
+| www | CNAME | betaboostonline.github.io. |
 
-   Vervang `JOUWGEBRUIKERSNAAM` door je GitHub-gebruikersnaam (met de punt aan het eind).
+   Let op de punt aan het eind van `betaboostonline.github.io.`.
 5. Klik **Opslaan**. Het kan een paar minuten tot een paar uur duren voordat dit overal werkt.
 
 ## 5. HTTPS aanzetten
 
 1. Ga terug naar **Settings → Pages** op GitHub. Zodra de domeincontrole groen is, vink je **Enforce HTTPS** aan.
-2. Open https://betaboost.online. Klaar.
+2. Open https://betavonk.nl. Klaar.
+
+## 6. Het oude domein betaboost.online
+
+GitHub Pages kan maar één eigen domein hebben. Laat betaboost.online doorsturen naar de nieuwe site:
+
+1. Ga in TransIP naar **Domeinen → betaboost.online**.
+2. Zet bij **Doorsturen** (of "Webforwarding") een doorverwijzing naar `https://betavonk.nl`. Haal daarvoor eerst de GitHub-records (A, AAAA en www) bij betaboost.online weg, anders werkt de doorverwijzing niet.
+3. Verleng betaboost.online niet als het verloopt.
 
 ## Daarna
 
