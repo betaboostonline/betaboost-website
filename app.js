@@ -1,4 +1,4 @@
-// BetaBoost website: hash router, lessen + aanmelden via de formulierservice, oefenmateriaal.
+// Bètavonk website: hash router, lessen + aanmelden via de formulierservice, oefenmateriaal.
 // De formulierservice is een Google Apps Script-webapp die in een afgeschermd Google-spreadsheet schrijft
 // (zie backend/Code.gs en INSTALLATIE.md). Zonder ENDPOINT draait de site in voorbeeldmodus:
 // er wordt dan niets verstuurd en alleen de plekkentelling in deze browser bijgehouden.
@@ -17,7 +17,7 @@
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".site-nav a"));
   var nav = document.getElementById("site-nav");
   var toggle = document.getElementById("menu-toggle");
-  var TITLES = { home: "BetaBoost", how: "Zo werkt het", sessions: "Lessen", register: "Aanmelden",
+  var TITLES = { home: "Bètavonk", how: "Zo werkt het", sessions: "Lessen", register: "Aanmelden",
     resources: "Oefenen", explore: "Ontdek bèta", schools: "Voor scholen", about: "Over ons",
     contact: "Contact", feedback: "Feedback op de les", policies: "Privacy en veiligheid",
     voorwaarden: "Algemene voorwaarden", artikel: "Ontdek bèta",
@@ -37,7 +37,7 @@
     nav.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
     window.scrollTo(0, 0);
-    document.title = name === "home" ? "BetaBoost" : TITLES[name] + " · BetaBoost";
+    document.title = name === "home" ? "Bètavonk" : TITLES[name] + " · Bètavonk";
     if (name === "sessions" || name === "register") loadSessions();
     if (name === "artikel") currentArticle = articleId;
     if (name === "resources" || name === "explore" || name === "artikel") loadContent();
@@ -490,7 +490,7 @@
       src.hidden = true;
       return;
     }
-    document.title = a.titel + " · BetaBoost";
+    document.title = a.titel + " · Bètavonk";
     document.getElementById("art-cat").textContent = a.categorie || "Ontdek bèta";
     title.textContent = a.titel;
     document.getElementById("art-lede").textContent = a.samenvatting || "";

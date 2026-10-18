@@ -1,8 +1,8 @@
 /**
- * BetaBoost formulierservice en inhoud (Google Apps Script, gekoppeld aan een Google-spreadsheet).
+ * Bètavonk formulierservice en inhoud (Google Apps Script, gekoppeld aan een Google-spreadsheet).
  *
  * - Aanmeldingen komen binnen met status "te beoordelen". Jullie accepteren of wijzen af via het menu
- *   BetaBoost in het spreadsheet; de ouder krijgt daarna automatisch een mail.
+ *   Bètavonk in het spreadsheet; de ouder krijgt daarna automatisch een mail.
  * - Bij elke aanmelding gaat een mail met de gegevens naar NOTIFY_EMAIL.
  * - De schoolmail wordt gecontroleerd (geen gratis mailadres, domein moet mail kunnen ontvangen)
  *   en bevestigd met een code die naar dat adres wordt gestuurd.
@@ -75,7 +75,7 @@ function testlessen() {
 
 // ---------- menu in het spreadsheet ----------
 function onOpen() {
-  SpreadsheetApp.getUi().createMenu('BetaBoost')
+  SpreadsheetApp.getUi().createMenu('Bètavonk')
     .addItem('Geselecteerde aanmelding accepteren', 'acceptSelected')
     .addItem('Geselecteerde aanmelding afwijzen', 'rejectSelected')
     .addToUi();
@@ -116,14 +116,14 @@ function decideSelected(accept) {
   }
 
   var body = accept
-    ? 'Beste ' + a.ouderNaam + ',\n\n' + a.voornaam + ' is geaccepteerd bij BetaBoost.\n\n' +
+    ? 'Beste ' + a.ouderNaam + ',\n\n' + a.voornaam + ' is geaccepteerd bij Bètavonk.\n\n' +
       (placed.length ? 'Lessen:\n- ' + placed.join('\n- ') + '\n\n' : '') +
       (waiting.length ? 'Op de wachtlijst voor:\n- ' + waiting.join('\n- ') + '\n\n' : '') +
-      'De Zoom-links sturen we voor de eerste les.\n\nMet vriendelijke groet,\nBetaBoost'
-    : 'Beste ' + a.ouderNaam + ',\n\nBedankt voor de aanmelding van ' + a.voornaam + ' bij BetaBoost. ' +
-      'Helaas kunnen we ' + a.voornaam + ' op dit moment geen plek aanbieden. BetaBoost is bedoeld voor leerlingen in klas 1 en 2 ' +
-      'die geen toegang hebben tot betaalde bijles. Heeft u vragen, beantwoord dan deze mail.\n\nMet vriendelijke groet,\nBetaBoost';
-  MailApp.sendEmail({ to: String(a.ouderEmail), replyTo: REPLY_TO, name: 'BetaBoost',
+      'De Zoom-links sturen we voor de eerste les.\n\nMet vriendelijke groet,\nBètavonk'
+    : 'Beste ' + a.ouderNaam + ',\n\nBedankt voor de aanmelding van ' + a.voornaam + ' bij Bètavonk. ' +
+      'Helaas kunnen we ' + a.voornaam + ' op dit moment geen plek aanbieden. Bètavonk is bedoeld voor leerlingen in klas 1 en 2 ' +
+      'die geen toegang hebben tot betaalde bijles. Heeft u vragen, beantwoord dan deze mail.\n\nMet vriendelijke groet,\nBètavonk';
+  MailApp.sendEmail({ to: String(a.ouderEmail), replyTo: REPLY_TO, name: 'Bètavonk',
     subject: accept ? 'Aanmelding geaccepteerd: ' + a.voornaam : 'Over de aanmelding van ' + a.voornaam, body: body });
   ui.alert('Klaar. De status is aangepast en de mail is verstuurd.');
 }
@@ -194,9 +194,9 @@ function sendCode(d) {
   var code = String(Math.floor(100000 + Math.random() * 900000));
   cache.put('code:' + email, code, 900);
   cache.put(countKey, String(count + 1), 900);
-  MailApp.sendEmail({ to: email, replyTo: REPLY_TO, name: 'BetaBoost', subject: 'Je BetaBoost-code: ' + code,
-    body: 'Hoi,\n\nJe code om je aan te melden bij BetaBoost is: ' + code + '\n\nDe code is 15 minuten geldig. ' +
-      'Heb je je niet aangemeld? Dan kun je deze mail negeren.\n\nBetaBoost' });
+  MailApp.sendEmail({ to: email, replyTo: REPLY_TO, name: 'Bètavonk', subject: 'Je Bètavonk-code: ' + code,
+    body: 'Hoi,\n\nJe code om je aan te melden bij Bètavonk is: ' + code + '\n\nDe code is 15 minuten geldig. ' +
+      'Heb je je niet aangemeld? Dan kun je deze mail negeren.\n\nBètavonk' });
   return { ok: true };
 }
 
@@ -256,7 +256,7 @@ function register(d) {
 function notifyTeam(d, id, requested, waiting, lessons, mail) {
   function names(ids) { return ids.map(function (x) { return '- ' + lessons[x].onderwerp + ' (' + lessons[x].datum + ', ' + lessons[x].tijd + ')'; }).join('\n') || '- geen'; }
   var body = [
-    'Nieuwe aanmelding (' + id + '). Beoordeel hem in het spreadsheet via het menu BetaBoost.', '',
+    'Nieuwe aanmelding (' + id + '). Beoordeel hem in het spreadsheet via het menu Bètavonk.', '',
     'Leerling: ' + d.voornaam + ' ' + d.achternaam + ', ' + d.leeftijd + ' jaar, ' + d.klas,
     'School: ' + d.school, 'Schoolmail: ' + mail + (d.zonderCode === true ? ' (NIET bevestigd: geen code ontvangen, controleer dit zelf)' : ' (bevestigd met code)'),
     'Vakken: ' + d.vakken, 'Lastige onderwerpen: ' + (d.onderwerpen || '-'), 'Bijles buiten school: ' + d.bijles, '',
@@ -265,11 +265,11 @@ function notifyTeam(d, id, requested, waiting, lessons, mail) {
     'Aangevraagd:', names(requested), 'Wachtlijst:', names(waiting)
   ];
   if (d.huiswerk) body.push('', 'Huiswerkvraag (' + d.huiswerk.vak + ', ' + (d.huiswerk.onderwerp || '-') + '):', d.huiswerk.vraag, 'Al geprobeerd: ' + d.huiswerk.geprobeerd);
-  MailApp.sendEmail({ to: NOTIFY_EMAIL, name: 'BetaBoost website', subject: 'Nieuwe aanmelding: ' + d.voornaam + ' ' + d.achternaam + ' (' + d.klas + ')', body: body.join('\n') });
+  MailApp.sendEmail({ to: NOTIFY_EMAIL, name: 'Bètavonk website', subject: 'Nieuwe aanmelding: ' + d.voornaam + ' ' + d.achternaam + ' (' + d.klas + ')', body: body.join('\n') });
 }
 
 function validate(d) {
-  if (KLASSEN.indexOf(d.klas) === -1) return 'BetaBoost is alleen voor klas 1 en 2.';
+  if (KLASSEN.indexOf(d.klas) === -1) return 'Bètavonk is alleen voor klas 1 en 2.';
   var age = Number(d.leeftijd);
   if (!(age >= 10 && age <= 15)) return 'Controleer de leeftijd.';
   if (!d.voornaam || !d.achternaam || !d.school || !d.ouderNaam || !d.vakken || !d.bijles) return 'Niet alle verplichte velden zijn ingevuld.';
