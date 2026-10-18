@@ -51,11 +51,10 @@ Je doet dit één keer. Daarna zet Claude aanpassingen direct in GitHub en staat
 
 ## 6. Het oude domein betaboost.online
 
-GitHub Pages kan maar één eigen domein hebben. Laat betaboost.online doorsturen naar de nieuwe site:
+De site is nooit openbaar gedeeld op betaboost.online, dus doorsturen is niet nodig. Doorsturen kost bij TransIP extra (de Doorstuurservice) en werkt niet met https.
 
-1. Ga in TransIP naar **Domeinen → betaboost.online**.
-2. Zet bij **Doorsturen** (of "Webforwarding") een doorverwijzing naar `https://betavonk.nl`. Haal daarvoor eerst de GitHub-records (A, AAAA en www) bij betaboost.online weg, anders werkt de doorverwijzing niet.
-3. Verleng betaboost.online niet als het verloopt.
+1. Haal in TransIP bij **Domeinen → betaboost.online → DNS** de GitHub-records weg (de A-, AAAA- en www-regels).
+2. Zet bij betaboost.online de automatische verlenging uit, zodat het domein na de looptijd vervalt.
 
 ## Daarna
 
